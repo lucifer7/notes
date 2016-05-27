@@ -1,5 +1,6 @@
-### terms
+## terms
 
+### 1.0 Computer Science
 1. Fluent Interface
 - implemented by using method cascading (concretely method chaining)
 - relay the instruction context of a subsequent call
@@ -19,6 +20,9 @@ Solutions see : https://www.iron.io/spikability-applications-ability-to/
 1. network bandwidth and latency
 带宽与延迟
 
+### 2.0 Internet Association
 1. diminishing marginal returns
 边际收益递减
 
+1. 增量 Incremental
+存量 Stock
