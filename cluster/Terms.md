@@ -4,6 +4,7 @@
 1. Fluent Interface
 - implemented by using method cascading (concretely method chaining)
 - relay the instruction context of a subsequent call
+流接口
 
 1. Application Spikability
 DEF: An Application's Ability to Handle Unknown and/or Inconsistent Load
