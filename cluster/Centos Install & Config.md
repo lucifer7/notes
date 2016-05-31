@@ -138,6 +138,15 @@ Check:
 For more details:
 [Varnish official User Guide](https://varnish-cache.org/docs/4.0/index.html#)
 
+1. Install ZooKeeper
+- 启动
+> zookeeper-3.4.6/bin/zkServer.sh start
+
+- 输入jps命令查看进程
+1573 QuorumPeerMain
+1654 Jps
+
+
 1. Set time zone
 > [root@demo81 Asia]# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
