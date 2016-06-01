@@ -1,6 +1,8 @@
 Update at: 2016-05-27
 
 ### 1.0 TODO
+1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)
+
 1. Install benchmark test environment on Yoga
 1. [finish Notes on this page, deep copy and shallow copy](http://droidyue.com/blog/2016/05/15/dive-into-java-clone/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 1. [HashSet impl here, finish reading](http://tengj.top/2016/04/15/javajh3hashmap/)
