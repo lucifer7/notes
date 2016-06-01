@@ -1,6 +1,10 @@
 ## terms
 
 ### 1.0 Computer Science
+1. spatial and temporal locality
+空间局部性
+时间局部性
+
 1. Fluent Interface
 - implemented by using method cascading (concretely method chaining)
 - relay the instruction context of a subsequent call
