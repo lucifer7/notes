@@ -1,5 +1,8 @@
 
-### Difference between cookie, localStorage, sessionStorage
+### HTML5 本地存储
+#### IndexedDB
+http://www.cnblogs.com/dolphinX/p/3415761.html
+#### Difference between cookie, localStorage, sessionStorage
 1. cookie由服务端生成，用于标识用户身份；而两个storage用于浏览器端缓存数据
 2. 三者都是键值对的集合
 3. 一般情况下浏览器端不会修改cookie，但会频繁操作两个storage
@@ -22,3 +25,8 @@ use URL hash instead(onhashchange)
 OR:
 use pludgin: history.js
 Home page:  ..
+
+### Quickling/Page cache 解决方案
+https://github.com/fex-team/fis-plus/wiki/quickling
+
+http://www.slideshare.net/ajaxexperience2009/chanhao-jiang-and-david-wei-presentation-quickling-pagecache
