@@ -83,6 +83,12 @@ export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
 
 > 特别注意：请把/etc/hosts文件中的第一行localhost也修改掉 啧啧
 
+> 同时配置多台虚拟机：[root@demo80 ~]# scp /etc/hosts/ 10.200.157.82:/etc/hosts
+
+> 如果系统重装，会报错：remote host identification has changed
+
+> 解决：[root@demo80 ~]# ssh-keygen -R 10.200.157.82
+
 ### 1.6 install tomcat as a service
 <pre>
 #!/bin/bash  
