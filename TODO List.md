@@ -1,6 +1,11 @@
-Update at: 2016-05-27
+Update at: 2016-03-13
 
 ### 1.0 TODO
+1. Restore dev environment
+1. evernote, foobar 2000, office 365(gen by KMSpico), vm + centos, xmangager, KMplayer (new version or oldest)
+
+
+
 1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)
 
 1. Install benchmark test environment on Yoga
