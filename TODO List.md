@@ -3,7 +3,7 @@ Update at: 2016-03-13
 ### 1.0 TODO
 1. Restore dev environment
 1. evernote, foobar 2000, office 365(gen by KMSpico), vm + centos, xmangager, KMplayer (new version or oldest)
-
+1. HDMI外接显示器，音频解决方案？
 
 
 1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)
