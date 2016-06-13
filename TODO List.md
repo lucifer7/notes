@@ -3,7 +3,7 @@ Update at: 2016-06-13
 ### 1.0 TODO
 1. Restore dev environment
 1. Install Chrome extension, ad block, mouse gesture
-
+1. Office activation, kmspico ?
 
 1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)
 
