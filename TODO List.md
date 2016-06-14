@@ -1,10 +1,13 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
+1. Finish work review ppt
+
 1. Restore dev environment (IDEA, VM, CENTOS)
 1.1 192.168.1.16    jdk, tomcat, redis, rocketmq-a
 1.2 192.168.1.17    jdk, tomcat, rocketmq-b
 1.3 192.168.1.18    jdk, tomcat, svn, nexus, jerkins
+
 
 1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)
 
@@ -18,6 +21,8 @@ Update at: 2016-06-14
 1. _gnuplot generate image wrong_  RETRY
 
 ### 3.0 DONE LIST
+<del>
+<pre>
 1. _httperf_  DONE
 1. _autobench_ DONE
 1. _integrated benchmark testing_  DONE
@@ -25,3 +30,5 @@ Update at: 2016-06-14
 1. evernote, foobar 2000, office 365(gen by KMSpico failed, used kms), vm + centos, xmangager, KMplayer (new version or oldest, work failed)      DONE
 1. Install Chrome extension, ad block, mouse gesture(synchronized by Chrome)        DONE
 1. Office activation, kmspico (use newest version)      DONE
+</pre>
+</del>
