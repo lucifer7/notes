@@ -20,6 +20,12 @@ More tree types:
 Modified Preorder Tree Traversal：预排序遍历树
 
 ### Implement for trees
+MySQL does not support recursive query
+Oracle use START WITH, CONNECT BY
+SQL Server use CTE
+
+[Adjacency list vs. nested sets: MySQL](https://explainextended.com/2009/09/29/adjacency-list-vs-nested-sets-mysql/)
+> nested sets defeats adjacency list on most query
 
 #### 1.1 Modified Path Enumeration Tree
 >width = 4, id string type
@@ -52,3 +58,10 @@ id, path(1/5/6/)
 
 1. select tree map
  ...?
+
+
+## Java Implementation
+### Ref url
+TODO: imple tree, redBlackTree
+
+[Java tree implementation](http://www.quesucede.com/page/show/id/java-tree-implementation#app-class)
