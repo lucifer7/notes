@@ -1,7 +1,7 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
-1. Finish work review ppt
+1. Finish work review ppt   TBC
 
 1. Restore dev environment (IDEA, VM, CENTOS)
 1.1 192.168.1.16    jdk, tomcat, redis, rocketmq-a

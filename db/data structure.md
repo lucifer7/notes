@@ -19,4 +19,36 @@ See Ref Book: SQL anti-patterns
 More tree types:
 Modified Preorder Tree Traversal：预排序遍历树
 
-###
+### Implement for trees
+
+#### 1.1 Modified Path Enumeration Tree
+>width = 4, id string type
+root 0000
+
+select parent
+>select * from tree where id =  id.substr(0, id.length - 4)
+
+select ancestor
+
+select tree map
+>select * from tree where id like '0000%'
+order by len(id), id
+
+#### 1.2 Path Enumeration Tree
+id, path(1/5/6/)
+
+
+#### 1.3  Modified Preorder tree
+> id, lno, rno
+
+1. select parent
+>select * from tree where lno = (:lno - 1)
+
+1. select ancestor
+>select * from tree where lno < (:lno) and rno > (:rno)
+
+1. select children
+>select * from tree where lno > (:lno) and rno < (:rno)
+
+1. select tree map
+ ...?

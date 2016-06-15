@@ -31,3 +31,8 @@ Solutions see : https://www.iron.io/spikability-applications-ability-to/
 
 1. 增量 Incremental
 存量 Stock
+
+### 3.0 SQL
+predicate 谓词
+OR 断言
+e.g. BETWEEN EXISTS IN
