@@ -36,3 +36,6 @@ Solutions see : https://www.iron.io/spikability-applications-ability-to/
 predicate 谓词
 OR 断言
 e.g. BETWEEN EXISTS IN
+
+spatial index
+空间索引，用于图等

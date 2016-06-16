@@ -1,17 +1,14 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
-1. Finish work review ppt   TBC
 
 1. Restore dev environment (IDEA, VM, CENTOS)
 1.1 192.168.1.16    jdk, tomcat, redis, rocketmq-a
 1.2 192.168.1.17    jdk, tomcat, rocketmq-b
 1.3 192.168.1.18    jdk, tomcat, svn, nexus, jerkins
 
-
-1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)
-
 1. Install benchmark test environment on Yoga
+
 1. [finish Notes on this page, deep copy and shallow copy](http://droidyue.com/blog/2016/05/15/dive-into-java-clone/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 1. [HashSet impl here, finish reading](http://tengj.top/2016/04/15/javajh3hashmap/)
 1. Implement RedBlackTree, see ref above
@@ -30,5 +27,7 @@ Update at: 2016-06-14
 1. evernote, foobar 2000, office 365(gen by KMSpico failed, used kms), vm + centos, xmangager, KMplayer (new version or oldest, work failed)      DONE
 1. Install Chrome extension, ad block, mouse gesture(synchronized by Chrome)        DONE
 1. Office activation, kmspico (use newest version)      DONE
+1. Finish work review ppt (morning)       DONE
+1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)      16-6-16     DONE
 </pre>
 </del>

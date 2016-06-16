@@ -65,3 +65,5 @@ id, path(1/5/6/)
 TODO: imple tree, redBlackTree
 
 [Java tree implementation](http://www.quesucede.com/page/show/id/java-tree-implementation#app-class)
+
+[树型的数据库结构Schema](http://blog.csdn.net/monkey_d_meng/article/details/6647488)
