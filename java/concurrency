@@ -1,0 +1,6 @@
+### Future and Promises
+Futures and promises are pretty similar concepts, the difference is that a future is a read-only container for a result that does not yet exist, while a promise can be written (normally only once). The Java 8 CompletableFuture and the Guava SettableFuture can be thought of as promises, because their value can be set ("completed"), but they also implement the Future interface, therefore there is no difference for the client.
+
+[test this](http://blog.zhouhaocheng.cn/posts/41)
+
+[More detail](http://marsishandsome.github.io/gen/posts/Scala/%E8%A7%A3%E8%AF%BBFuture%E5%92%8CPromise.html)

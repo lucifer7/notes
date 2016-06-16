@@ -2,6 +2,8 @@ Update at: 2016-06-14
 
 ### 1.0 TODO
 
+1. impl red black tree
+
 1. Restore dev environment (IDEA, VM, CENTOS)
 1.1 192.168.1.16    jdk, tomcat, redis, rocketmq-a          Data Cache Server
 1.2 192.168.1.17    jdk, tomcat, rocketmq-b, ab, HttpErf    Test Server
@@ -17,7 +19,7 @@ Update at: 2016-06-14
 1. Build apache svn maven+nexus+jenkins auto deploy environment
 
 #### Concurrency
-1. Demon thread
+1. Demon thread     DONE
 
 
 ### 2.0 RETRY LIST
