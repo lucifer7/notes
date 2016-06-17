@@ -32,6 +32,8 @@ Problem:
 
 [CAS and ABA in JAVA](http://www.cnblogs.com/549294286/p/3766717.html)
 
+[无锁队列的实现](http://coolshell.cn/articles/8239.html)
+
 #### 2.1 operations like CAS
 Fetch And Add，一般用来对变量做 +1 的原子操作
 

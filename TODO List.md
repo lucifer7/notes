@@ -1,6 +1,7 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
+1. 2016 q3 read plan
 
 1. impl red black tree
 
@@ -12,6 +13,9 @@ Update at: 2016-06-14
 1.5 192.168.1.20    jdk, tomcat(webapp)                     Application Server
 
 1. Install benchmark test environment on Yoga
+
+1. Three Days for Python
+[guidance](http://mp.weixin.qq.com/s?__biz=MzIxMjM4MjkwMw==&mid=2247483789&idx=1&sn=4c8fd2e76970a5d86c7b7a13c3046a30#rd)
 
 1. [HashSet impl here, finish reading](http://tengj.top/2016/04/15/javajh3hashmap/)
 1. Implement RedBlackTree, see ref above

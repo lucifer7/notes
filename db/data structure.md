@@ -19,7 +19,7 @@ See Ref Book: SQL anti-patterns
 More tree types:
 Modified Preorder Tree Traversal：预排序遍历树
 
-### Implement for trees
+### Tree hierarchy in Database
 MySQL does not support recursive query
 Oracle use START WITH, CONNECT BY
 SQL Server use CTE
@@ -60,8 +60,8 @@ id, path(1/5/6/)
  ...?
 
 
-## Java Implementation
-### Ref url
+## Tree hierarchy in Java
+### 1. Red black tree  红黑树
 TODO: imple tree, redBlackTree
 
 [Java tree implementation](http://www.quesucede.com/page/show/id/java-tree-implementation#app-class)
@@ -70,3 +70,11 @@ TODO: imple tree, redBlackTree
 
 JAVA 红黑树
 [Java集合干货系列-（四）TreeMap源码解析](http://tengj.top/2016/04/16/javajh4treemap/)
+
+### 2. Trie tree  字典树，前缀树
+一种有序树，用于保存关联数组，其中的键通常是字符串。与二叉查找树不同，键不是直接保存在节点中，而是由节点在树中的位置决定。一个节点的所有子孙都有相同的前缀，也就是这个节点对应的字符串，而根节点对应空字符串
+
+用途：
+- 词频统计
+相对于 hash 或 堆，压缩省空间
+- 前缀匹配
