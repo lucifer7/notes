@@ -3,6 +3,11 @@ Update at: 2016-06-14
 ### 1.0 TODO
 1. 2016 q3 read plan
 
+1.
+spring boot
+spring jpa
+argular.js
+
 1. impl red black tree
 
 1. Restore dev environment (IDEA, VM, CENTOS)

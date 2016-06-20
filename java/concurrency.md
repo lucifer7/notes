@@ -41,4 +41,45 @@ Test-and-set，写值到某个内存位置并传回其旧值。汇编指令BST
 
 Test and Test-and-set，用来低低Test-and-Set的资源争夺情况
 
+### 线程池
+ThreadPoolExecutor in JAVA 8
+
+#### PoolSize
+corePoolSize
+maxPoolSize
+if presentSize < corePoolSize, new task = new thread
+if corePoolSize < presentSize < maxPoolSize && queue isFull, new task = new thread
+
+#### On-demand construction
+pre start core thread
+
+#### Keep-alive time
+available if threads more than corePoolSize
+
+#### Queuing
+must BlockingQueue ?
+any BlockingQueue
+
+Three Strategies for queuing
+- Direct handoffs
+Default
+without holding tasks
+Unbounded maxPoolSize, to avoid rejection of new task
+
+- Unbounded queues
+Default <b>LinkedBlockingQueue</b>
+wait in the queue when all corePoolSize threads are busy
+thus, the value of maxPoolSize is meaningless
+
+- Bounded queues
+Default ArrayBlockingQueue
+finite maxPoolSize, limit usage of resources
+
+
+
+
+
+
+
+
 
