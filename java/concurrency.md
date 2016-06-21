@@ -62,16 +62,19 @@ any BlockingQueue
 
 Three Strategies for queuing
 - Direct handoffs
-Default
+缓冲队列
+Default SynchronousQueue
 without holding tasks
 Unbounded maxPoolSize, to avoid rejection of new task
 
 - Unbounded queues
+无界队列
 Default <b>LinkedBlockingQueue</b>
 wait in the queue when all corePoolSize threads are busy
 thus, the value of maxPoolSize is meaningless
 
 - Bounded queues
+有界队列
 Default ArrayBlockingQueue
 finite maxPoolSize, limit usage of resources
 
