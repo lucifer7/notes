@@ -1,8 +1,6 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
-1. 2016 q3 read plan
-
 1.
 spring boot
 spring jpa
@@ -46,5 +44,7 @@ argular.js
 1. Office activation, kmspico (use newest version)      DONE
 1. Finish work review ppt (morning)       DONE
 1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)      16-6-16     DONE
+1. 2016 q3 read plan   6-20     DONE
+
 </pre>
 </del>
