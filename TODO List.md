@@ -34,7 +34,6 @@ argular.js
 
 ### 3.0 DONE LIST
 <del>
-<pre>
 1. _httperf_  DONE
 1. _autobench_ DONE
 1. _integrated benchmark testing_  DONE
@@ -43,8 +42,7 @@ argular.js
 1. Install Chrome extension, ad block, mouse gesture(synchronized by Chrome)        DONE
 1. Office activation, kmspico (use newest version)      DONE
 1. Finish work review ppt (morning)       DONE
-1. [Finish this unit test, see <java-study>](http://www.cnblogs.com/peida/p/Guava_Cache.html)      16-6-16     DONE
+1. [Finish this unit test, see java-study](http://www.cnblogs.com/peida/p/Guava_Cache.html)      16-6-16     DONE
 1. 2016 q3 read plan   6-20     DONE
 
-</pre>
 </del>
