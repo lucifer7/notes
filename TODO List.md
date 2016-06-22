@@ -6,8 +6,6 @@ spring boot
 spring jpa
 argular.js
 
-1. impl red black tree
-
 1. implement thread pool, executor and factory
 
 1. Restore dev environment (IDEA, VM, CENTOS)
@@ -22,13 +20,13 @@ argular.js
 1. Three Days for Python
 [guidance](http://mp.weixin.qq.com/s?__biz=MzIxMjM4MjkwMw==&mid=2247483789&idx=1&sn=4c8fd2e76970a5d86c7b7a13c3046a30#rd)
 
+1. impl red black tree
 1. [HashSet impl here, finish reading](http://tengj.top/2016/04/15/javajh3hashmap/)
 1. Implement RedBlackTree, see ref above
 
 1. Build apache svn maven+nexus+jenkins auto deploy environment
 
 #### Concurrency
-1. Demon thread     DONE
 
 
 ### 2.0 RETRY LIST
@@ -46,5 +44,6 @@ argular.js
 1. Finish work review ppt (morning)       DONE
 1. [Finish this unit test, see java-study](http://www.cnblogs.com/peida/p/Guava_Cache.html)      16-6-16     DONE
 1. 2016 q3 read plan   6-20     DONE
+1. Demon thread     DONE
 
 </del>
