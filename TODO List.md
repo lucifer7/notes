@@ -1,12 +1,14 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
-1.
+1. New system architecture:
 spring boot
 spring jpa
 argular.js
 
 1. impl red black tree
+
+1. implement thread pool, executor and factory
 
 1. Restore dev environment (IDEA, VM, CENTOS)
 1.1 192.168.1.16    jdk, tomcat, redis, rocketmq-a          Data Cache Server
