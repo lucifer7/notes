@@ -29,6 +29,11 @@ Solutions see : https://www.iron.io/spikability-applications-ability-to/
 1. diminishing marginal returns
 边际收益递减
 
+1. Chunked Transfer Encoding
+a data transfer mechanism, brought in HTTP 1.1(which is supported by almost every browser)
+data send in a series of chunks
+
+
 1. 增量 Incremental
 存量 Stock
 
@@ -41,3 +46,9 @@ e.g. BETWEEN EXISTS IN
 
 spatial index
 空间索引，用于图等
+
+### 4.0 Java Performance
+1. False sharing and cache line 
+伪分享与缓存行
+
+2. 
