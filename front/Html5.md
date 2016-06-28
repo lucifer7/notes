@@ -1,4 +1,3 @@
-
 ### HTML5 本地存储
 #### IndexedDB
 http://www.cnblogs.com/dolphinX/p/3415761.html
@@ -30,3 +29,52 @@ Home page:  ..
 https://github.com/fex-team/fis-plus/wiki/quickling
 
 http://www.slideshare.net/ajaxexperience2009/chanhao-jiang-and-david-wei-presentation-quickling-pagecache
+
+HTML 属性全称
+
+作者：贺师俊
+链接：https://www.zhihu.com/question/47896214/answer/108198960
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+那些比较明显的（如 p、h1~h6、ol、ul、li、abbr、col、img、ins、del、q 等）我就不写了。
+
+a: anchor
+link的端点叫做anchor。link是从一端指向到另一端，通常a通过href属性指向外部资源，此a即为起始端点，但早期a也可以用name属性表示文档中可以被链接到的目标端点（后来任意元素上有id属性均可成为目标端点）。
+
+b: bold
+i: italic
+u: underlined
+s: strike-through
+注意以上四个元素现在的语义都和原来偏重样式的定义不同了。
+
+bdi: bidi isolated
+bdo: bidi override
+
+br: (line) break
+wbr: word break
+hr: horizontal rule
+
+dl: definition list
+dt: definition term
+dd: definition description
+
+dfn: (instance) definition
+
+iframe: inline frame
+
+var: variable
+kbd: keyboard
+samp: sample
+
+sub: subscript
+sup: superscript
+
+pre: preformatted
+
+rt: ruby text
+rp: ruby parenthesis 
+
+以上。
+
+注意，这里写的是当初起名字时候的单词，但是精确的语义还是要看现在的spec，因为有些元素的语义已经和当初不完全一致了。
