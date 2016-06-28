@@ -1,6 +1,8 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
+1. Switch JDK to 32-bit
+
 1. New system architecture:
 spring boot
 spring jpa

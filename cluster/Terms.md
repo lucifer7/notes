@@ -50,5 +50,6 @@ spatial index
 ### 4.0 Java Performance
 1. False sharing and cache line 
 伪分享与缓存行
+[False Sharing](http://ifeve.com/false-sharing/)
 
 2. 

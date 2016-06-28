@@ -31,3 +31,38 @@ warehouse-scale computing
 
 Ref Book:
 [大型网站技术架构](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00F3Z26G8?ie=UTF8&SubscriptionId=AKIAJOMEZLLKFEWYT4PQ&camp=2025&creative=165953&creativeASIN=B00F3Z26G8&linkCode=xm2&tag=z08-23)
+
+### 3. Server Architecture
+Three architecture for business server
+
+1. Symmetric Multi-Processing (SMP)
+对称多处理：多个CPU对称工作，无主次或从属关系
+Share same physical memory, access to any address takes same time
+Thus is also called: 一致存储访问结构
+Uniform Memory Access (UMA)  
+Feature: sharing
+Extension: more memory, faster CPU, more CPU, more i/o, more device
+Defect: extension limited
+Best practice: 2-4 CPUs
+
+2. Massively Parallel Processing (MPP)
+海量并行处理结构: 多个SMP服务器（节点）互联而成
+完全无共享结构(Share Nothing)
+Thus：扩展能力最好，目前512个节点，数千个CPU
+MPP vs. NUMA
+| Feature | MPP | NUMA |
+|--|:--|:--|
+| 节点互联机制 | I/O | inside same physical server |
+| 内存访问机制 | access only local | access to all, remote delays |
+| Usage | data warehouse, i/o | OLTP, little data, fast processing |
+
+3. Non-Uniform Memory Access (NUMA)
+非一致存储访问结构
+Feature: 多个CPU模块，每个模块多个CPU
+独立内存，I/O
+通过互联模块（eg. crossbar switch) 连接和信息交互
+支持上百个CPU
+Defects：远地内存延时太多
+系统性能无法线性增加
+
+[Transitioning from SMP to MPP, the why and the how](https://blogs.technet.microsoft.com/dataplatforminsider/2014/07/30/transitioning-from-smp-to-mpp-the-why-and-the-how/)
