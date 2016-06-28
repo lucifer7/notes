@@ -35,3 +35,10 @@ provide overview for program running detail
 
 CPU bound 型 与 IO bound 型，调优不同
 
+### Others
+1. CPU affinity
+CPU亲缘性 (soft and hard)
+Cause: most popular architecture for server is SMP
+and every CPU has its own cache (L1, L2)
+TO: avoid L1/L2 cache invalid(失效) caused by context switch
+

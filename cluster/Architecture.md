@@ -33,10 +33,11 @@ Ref Book:
 [大型网站技术架构](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00F3Z26G8?ie=UTF8&SubscriptionId=AKIAJOMEZLLKFEWYT4PQ&camp=2025&creative=165953&creativeASIN=B00F3Z26G8&linkCode=xm2&tag=z08-23)
 
 ### 3. Server Architecture
+#### 3.1 服务器三大体系结构
 Three architecture for business server
 
-1. Symmetric Multi-Processing (SMP)
-对称多处理：多个CPU对称工作，无主次或从属关系
+1. Symmetric Multi-Processing (SMP)  **主流服务器架构**
+对称多处理架构：多个CPU对称工作，无主次或从属关系
 Share same physical memory, access to any address takes same time
 Thus is also called: 一致存储访问结构
 Uniform Memory Access (UMA)  
@@ -65,4 +66,24 @@ Feature: 多个CPU模块，每个模块多个CPU
 Defects：远地内存延时太多
 系统性能无法线性增加
 
+[服务器三大体系SMP、NUMA、MPP介绍](http://server.51cto.com/sCollege-198840.htm)
 [Transitioning from SMP to MPP, the why and the how](https://blogs.technet.microsoft.com/dataplatforminsider/2014/07/30/transitioning-from-smp-to-mpp-the-why-and-the-how/)
+[Multi core basics: AMP and SMP](http://www.embedded.com/design/mcus-processors-and-socs/4429496/Multicore-basics)
+
+#### 3.2 多核系统三大架构
+1. SMP
+每个CPU内核运行一个独立的操作系统或同一操作系统的独立实例（instantiation）
+
+1. Asymmetric Multi-Processing (AMP)
+非对称多处理架构
+一个操作系统的实例可以同时管理所有CPU内核，且应用并不绑定某一个内核
+AMP vs. SMP
+| Feature | AMP | SMP |
+|---|:--|:--|
+| 耦合 | 松耦合多CPU系统 | 紧耦合多CPU系统 |
+| OS | one CPU, one OS | multi CPU, share one OS |
+| Apply | less | more |
+
+1. Bound Multi-Processing (BMP)
+混合多处理架构
+一个操作系统的实例可以同时管理所有CPU内核，但每个应用被锁定于某个指定的核心
