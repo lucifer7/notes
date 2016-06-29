@@ -51,7 +51,7 @@ Best practice: 2-4 CPUs
 完全无共享结构(Share Nothing)
 Thus：扩展能力最好，目前512个节点，数千个CPU
 MPP vs. NUMA
-| Feature | MPP | NUMA |
+| Criteria | MPP | NUMA |
 |--|:--|:--|
 | 节点互联机制 | I/O | inside same physical server |
 | 内存访问机制 | access only local | access to all, remote delays |
@@ -78,7 +78,7 @@ Defects：远地内存延时太多
 非对称多处理架构
 一个操作系统的实例可以同时管理所有CPU内核，且应用并不绑定某一个内核
 AMP vs. SMP
-| Feature | AMP | SMP |
+| Criteria | AMP | SMP |
 |---|:--|:--|
 | 耦合 | 松耦合多CPU系统 | 紧耦合多CPU系统 |
 | OS | one CPU, one OS | multi CPU, share one OS |

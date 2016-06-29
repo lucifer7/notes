@@ -48,8 +48,4 @@ spatial index
 空间索引，用于图等
 
 ### 4.0 Java Performance
-1. False sharing and cache line 
-伪分享与缓存行
-[False Sharing](http://ifeve.com/false-sharing/)
-
-2. 
+1. 

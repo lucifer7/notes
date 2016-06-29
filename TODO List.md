@@ -8,7 +8,6 @@ spring boot
 spring jpa
 argular.js
 
-1. implement thread pool, executor and factory
 
 1. Restore dev environment (IDEA, VM, CENTOS)
 1.1 192.168.1.16    jdk, tomcat, redis, rocketmq-a          Data Cache Server
@@ -47,5 +46,6 @@ argular.js
 1. [Finish this unit test, see java-study](http://www.cnblogs.com/peida/p/Guava_Cache.html)      16-6-16     DONE
 1. 2016 q3 read plan   6-20     DONE
 1. Demon thread     DONE
+1. implement thread pool, executor and factory
 
 </del>
