@@ -42,3 +42,21 @@ Cause: most popular architecture for server is SMP
 and every CPU has its own cache (L1, L2)
 TO: avoid L1/L2 cache invalid(失效) caused by context switch
 
+1. Cache barrier
+[Why Memory Barrier？](https://sstompkins.wordpress.com/2011/04/12/why-memory-barrier%EF%BC%9F/)
+
+1. Cache coherency 缓存一致性
+> 基本定律：在任意时刻，任意级别缓存中的缓存段的内容，等同于它对应的内存中的内容。
+write through 直写： 写入下级缓存
+write back 回写：仅修改本级缓存中数据，并标记为缓存段(Line)为脏段，触发回写
+优点：回写效率更高，过滤对同一地址的反复写操作
+> 回写定律：当所有的脏段被回写后，任意级别缓存中的缓存段的内容，等同于它对应的内存中的内容。
+
+Ref: 缓存关联性（cache associativity），缓存组（cache sets），使用分配写（write-allocate）还是非分配写（上面我描述的直写是和分配写相结合的，而回写是和非分配写相结合的），非对齐的访问（unaligned access），基于虚拟地址的缓存。。。
+
+1. 1 缓存一致性协议  Coherency protocols
+解决多核心的多组缓存同步问题
+1.1.1 窥探协议 snooping 
+use by most device
+
+1.1.2 基于目录的协议 directory-based 
