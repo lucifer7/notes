@@ -19,6 +19,11 @@ Refresh         Need refresh, 电容漏电, thus called dynamic     No need for 
 Applications    Main memory(eg. DDR3)                       L2, L3 cache
 Typical size    1G-2G, 4G-16G                                      1M-16M
 
+WIN7 下查看CPU缓存：
+> Run as administrator
+> wmic cpu get L2CacheSize, L2CacheSpeed, L3CacheSize, L3CacheSpeed
+Linux 下查看CPU:
+> lscpu
 
 ## 磁盘
 ### 1. 机械硬盘
