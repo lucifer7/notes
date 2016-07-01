@@ -6,6 +6,19 @@
 单条指令时间变长
 吞吐率提高(ThroughOut)
 以空间换时间   ？
+### 2. Cache
+Core1       Core1
+Register    Register
+L1 Cache    L1 Cache            -> divided into data cache and instruction cache ? for Von Neuman or Harvard? 
+Bus interface and L2 Cache      -> shared by multi cores 
+
+### 3. Memory
+Criteria        DRAM(Dynamic random access memory)          SRAM(Static random access memory)
+Bit stored in   separate capacitor in integrated circuit    bistable latching circuitry 双稳态锁存电路？
+Refresh         Need refresh, 电容漏电, thus called dynamic     No need for periodical refresh
+Applications    Main memory(eg. DDR3)                       L2, L3 cache
+Typical size    1G-2G, 4G-16G                                      1M-16M
+
 
 ## 磁盘
 ### 1. 机械硬盘
