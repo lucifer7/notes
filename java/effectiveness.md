@@ -43,6 +43,8 @@ and every CPU has its own cache (L1, L2)
 TO: avoid L1/L2 cache invalid(失效) caused by context switch
 
 1. Cache barrier
+一旦内存数据被推送到缓存，就会有消息协议来确保所有的缓存会对所有的共享数据同步并保持一致。这个使内存数据对CPU核可见的技术被称为内存屏障或内存栅栏
+volatile类型 写入之后插入store屏障，读取之前插入 load 屏障
 [Why Memory Barrier？](https://sstompkins.wordpress.com/2011/04/12/why-memory-barrier%EF%BC%9F/)
 
 1. Cache coherency 缓存一致性
