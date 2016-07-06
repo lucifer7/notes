@@ -1,6 +1,8 @@
 Update at: 2016-06-14
 
 ### 1.0 TODO
+1. Finish Internet protocol note [Finish Internet protocol note ](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
+
 1. Switch JDK to 32-bit
 
 1. New system architecture:
