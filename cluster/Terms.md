@@ -15,6 +15,12 @@ DEF: An Application's Ability to Handle Unknown and/or Inconsistent Load
 how an application can handle spiky behavior
 峰值处理能力？
 
+1. CPS（Cyber-Physical Systems）
+物联网(us)
+OR: IoT(Internet of Things)
+
+1. 多跳网络（multi-hop），以及自组织网络（ad-hoc）
+
 Solutions see : https://www.iron.io/spikability-applications-ability-to/
 
 1. Definition of Modern Web Browser

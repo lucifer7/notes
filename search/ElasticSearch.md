@@ -72,7 +72,13 @@ Caused by:
 and get a json type string
 
 1. 查看集群状态
+Console：
 > http://10.200.157.50:9200/_plugin/head/
+Kibana Sense:
+> yum OR tar
+[root@localhost bin]# vim /opt/kibana/config/kibana.yml 
+[root@localhost bin]# service kibana restart
+visit: http://10.200.157.50:5601/app/kibana
 
 #### Application
 ELK, Elasticsearch + Logstash + Kibana
