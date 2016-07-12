@@ -1,5 +1,5 @@
 #### Integrate with Maven
-<!-- apache hadoop start -->
+`<!-- apache hadoop start -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
@@ -11,7 +11,7 @@
             <version>${hadoop-version}</version>
         </dependency>
         <!-- apache hadoop end -->
-        
+        `
 version: 2.7.2
 
 #### For windows
