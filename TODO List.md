@@ -3,7 +3,7 @@ Update at: 2016-06-14
 ### 1.0 TODO
 1. Finish Internet protocol note [Finish Internet protocol note ](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
 
-1. Switch JDK to 32-bit
+1. Switch JDK to 32-bit, IDEA to 64-bit, and adjust vm options
 
 1. New system architecture:
 spring boot
@@ -11,6 +11,7 @@ spring jpa
 argular.js
 
 
+Pending till new machine...
 1. Restore dev environment (IDEA, VM, CENTOS)
 1.1 192.168.1.16    jdk, tomcat, redis, rocketmq-a          Data Cache Server
 1.2 192.168.1.17    jdk, tomcat, rocketmq-b, ab, HttpErf    Test Server

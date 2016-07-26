@@ -45,6 +45,11 @@ data send in a series of chunks
 
 1. 美国Fintech < -- > 中国互联网金融
 
+1. REST: PUT <--> POST
+语义有区别，
+put: 幂等
+post: 非幂等
+
 ### 3.0 SQL
 predicate 谓词
 OR 断言

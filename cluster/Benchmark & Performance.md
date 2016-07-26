@@ -91,6 +91,10 @@ Setting:
 
 NOTES: unsuccessful, paused
 
+### 6. JMeter
+
+### 7. HttpRequester  ?
+
 ## 二、Varnish 与 Nginx 性能测试
 ### 1. Varnish: Accelerator
 #### 1.1 Intro (from Wiki)
