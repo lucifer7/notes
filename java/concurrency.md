@@ -41,6 +41,11 @@ Test-and-set，写值到某个内存位置并传回其旧值。汇编指令BST
 
 Test and Test-and-set，用来低低Test-and-Set的资源争夺情况
 
+#### 2.2 活跃性问题
+死锁，活锁，饥饿
+
+ 一个并行应用程序的及时执行能力-》活跃度
+
 ### 线程池
 ThreadPoolExecutor in JAVA 8
 
