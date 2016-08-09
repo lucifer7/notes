@@ -7,7 +7,7 @@
 吞吐率提高(ThroughOut)
 以空间换时间   ？
 ### 2. Cache
-Core1       Core1
+Core1       Core2
 Register    Register
 L1 Cache    L1 Cache            -> divided into data cache and instruction cache ? for Von Neuman or Harvard? 
 Bus interface and L2 Cache      -> shared by multi cores 
