@@ -3,66 +3,89 @@
 
 ### Centos
 1. install tomcat, jdk, nginx
-> [root@localhost temp]# tar -zxvf apache-tomcat-7.0.68.tar.gz -C ../tomcat
-> [root@localhost temp]# wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.zip
-> [root@localhost pcre-8.37]# yum install gcc gcc-c++ autoconf make
-> [root@localhost pcre-8.37]# ./configure & make & make install
-> [root@localhost temp]# ./configure --prefix=/usr/local/nginx --conf-path=/usr/local/nginx/nginx.conf 
+
+```
+[root@localhost temp]# tar -zxvf apache-tomcat-7.0.68.tar.gz -C ../tomcat
+[root@localhost temp]# wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.zip
+[root@localhost pcre-8.37]# yum install gcc gcc-c++ autoconf make
+[root@localhost pcre-8.37]# ./configure & make & make install
+[root@localhost temp]# ./configure --prefix=/usr/local/nginx --conf-path=/usr/local/nginx/nginx.conf
+```
+
 
 1. nginx startup cmd
-> [root@localhost ~]# /usr/local/nginx/sbin/nginx 
-> [root@localhost ~]# netstat -ano |grep 80
+
+```
+[root@localhost ~]# /usr/local/nginx/sbin/nginx
+[root@localhost ~]# netstat -ano |grep 80
+```
+
 
 1. Install tomcat as a service
-<pre>Change to the /etc/init.d directory and create a script called 'tomcat' as shown below.
-view plaincopy to clipboardprint?
-[root@srv6 share]# cd /etc/init.d  
-[root@srv6 init.d]# vi tomcat  
+
+Change to the /etc/init.d directory and create a script called 'tomcat' as shown below.
+```
+[root@srv6 share]# cd /etc/init.d
+[root@srv6 init.d]# vi tomcat
+```
+
 And here is the script we will use.
 
-\#!/bin/bash
-\# description: Tomcat Start Stop Restart  
-\# processname: tomcat  
-\# chkconfig: 234 20 80  
-JAVA_HOME=/usr/java/jdk1.7.0_05  
-export JAVA_HOME  
-PATH=$JAVA_HOME/bin:$PATH  
-export PATH  
-CATALINA_HOME=/usr/share/apache-tomcat-7.0.29  
-  
-case $1 in  
-start)  
-sh $CATALINA_HOME/bin/startup.sh  
-;;   
-stop)     
-sh $CATALINA_HOME/bin/shutdown.sh  
-;;   
-restart)  
-sh $CATALINA_HOME/bin/shutdown.sh  
-sh $CATALINA_HOME/bin/startup.sh  
-;;   
-esac      
-exit 0  </pre>
+
+```
+#!/bin/bash
+# description: Tomcat Start Stop Restart
+# processname: tomcat
+# chkconfig: 234 20 80
+JAVA_HOME=/usr/java/jdk1.7.0_05
+export JAVA_HOME
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
+CATALINA_HOME=/usr/share/apache-tomcat-7.0.29
+
+case $1 in
+start)
+sh $CATALINA_HOME/bin/startup.sh
+;;
+stop)
+sh $CATALINA_HOME/bin/shutdown.sh
+;;
+restart)
+sh $CATALINA_HOME/bin/shutdown.sh
+sh $CATALINA_HOME/bin/startup.sh
+;;
+esac
+exit 0
+```
+
 
 > [Tomcat install reference url](http://www.davidghedini.com/pg/entry/install_tomcat_7_on_centos)
 
 1. Install Redis
 
-> vi /etc/redis/redis.conf
+```
+vi /etc/redis/redis.conf
+```
+
 > 仅修改： daemonize yes （no-->yes）
 
-> echo "/usr/local/bin/redis-server /etc/redis/redis.conf &" >> /etc/rc.local
+```
+echo "/usr/local/bin/redis-server /etc/redis/redis.conf &" >> /etc/rc.local
+```
 
 > [CentOS6 安装 Redis](https://segmentfault.com/a/1190000002685224)
 
-> [root@srv6 init.d]# chmod 755 tomcat
-> [root@srv6 init.d]# chkconfig --add tomcat
-> [root@srv6 init.d]# chkconfig --level 234 tomcat on
+```
+[root@srv6 init.d]# chmod 755 tomcat
+[root@srv6 init.d]# chkconfig --add tomcat
+[root@srv6 init.d]# chkconfig --level 234 tomcat on
+```
 
 > [reference url](http://www.davidghedini.com/pg/entry/install_tomcat_7_on_centos)
 
 1. load balacing
-<pre>
+
+```
 http {
     upstream app {
         server localhost:8080;
@@ -73,11 +96,12 @@ server {
         proxy_pass http://app;
     }
 }
-</pre>
+```
+
 
 1. nginx iptables [remove  ]
 ```
-> [root@nginx nginx]# iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+[root@nginx nginx]# iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
 [root@nginx nginx]# /etc/init.d/iptables status
 表格：filter
 Chain INPUT (policy ACCEPT)
@@ -99,13 +123,18 @@ num  target     prot opt source               destination
 
 ```
 1. redis install
-> [root@nginx redis]# make && make install
-> [root@nginx redis]# redis-server /etc/redis/redis.conf
 
+```
+[root@nginx redis]# make && make install
+[root@nginx redis]# redis-server /etc/redis/redis.conf
+```
 
 1. install mysql
 查看 mysql：
-> yum list | grep mysql
+
+```
+yum list | grep mysql
+```
 
 安装：
 > yum install mysql-server mysql mysql-devel
