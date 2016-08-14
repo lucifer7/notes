@@ -40,3 +40,6 @@ static inner class
 *Reference*
 [Thread-safe and performance](http://literatejava.com/jvm/fastest-threadsafe-singleton-jvm/)
 [initialization on demand holder](http://ifeve.com/initialization-on-demand-holder-idiom/)
+
+### Ref Doc Url
+> [图说设计模式](http://design-patterns.readthedocs.io/zh_CN/latest/index.html)

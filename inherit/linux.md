@@ -87,38 +87,43 @@ export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
 
 > 如果系统重装，会报错：remote host identification has changed
 
-> 解决：[root@demo80 ~]# ssh-keygen -R 10.200.157.82
+> 解决：
+```
+[root@demo80 ~]# ssh-keygen -R 10.200.157.82
+```
+
 
 ### 1.6 install tomcat as a service
-<pre>
-#!/bin/bash  
-# description: Tomcat Start Stop Restart  
-# processname: tomcat  
-# chkconfig: 234 20 80  
-JAVA_HOME=/usr/java/jdk1.7.0_60  
-export JAVA_HOME  
-PATH=$JAVA_HOME/bin:$PATH  
-export PATH  
-CATALINA_HOME=/usr/share/apache-tomcat-8.0.8  
-  
-case $1 in  
-start)  
-sh $CATALINA_HOME/bin/startup.sh  
-;;   
-stop)     
-sh $CATALINA_HOME/bin/shutdown.sh  
-;;   
-restart)  
-sh $CATALINA_HOME/bin/shutdown.sh  
-sh $CATALINA_HOME/bin/startup.sh  
-;;   
-esac      
-exit 0  
-</pre>
 
-### 1.7 Epoll 
+```
+#!/bin/bash
+# description: Tomcat Start Stop Restart
+# processname: tomcat
+# chkconfig: 234 20 80
+JAVA_HOME=/usr/java/jdk1.7.0_60
+export JAVA_HOME
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
+CATALINA_HOME=/usr/share/apache-tomcat-8.0.8
+
+case $1 in
+start)
+sh $CATALINA_HOME/bin/startup.sh
+;;
+stop)
+sh $CATALINA_HOME/bin/shutdown.sh
+;;
+restart)
+sh $CATALINA_HOME/bin/shutdown.sh
+sh $CATALINA_HOME/bin/startup.sh
+;;
+esac
+exit 0
+```
+
+### 1.7 Epoll
 EPOLL事件有两种模型：
-Edge Triggered (ET)
-Level Triggered (LT)
+**Edge Triggered (ET)** 和
+**Level Triggered (LT)**
 
 二者的差异在于level-trigger模式下只要某个socket处于readable/writable状态，无论什么时候进行epoll_wait都会返回该socket；而edge-trigger模式下只有某个socket从unreadable变为readable或从unwritable变为writable时，epoll_wait才会返回该socket。

@@ -1,7 +1,5 @@
-### Ref Doc Url
-1.  [图说设计模式](http://design-patterns.readthedocs.io/zh_CN/latest/index.html)
 
-### Centos
+### Centos6.5
 1. install tomcat, jdk, nginx
 
 ```
@@ -137,59 +135,104 @@ yum list | grep mysql
 ```
 
 安装：
-> yum install mysql-server mysql mysql-devel
+
+```
+yum install mysql-server mysql mysql-devel
+```
+
 
 查看安装结果：
-> [root@nginx ~]# rpm -qi mysql-server
+
+```
+[root@nginx ~]# rpm -qi mysql-server
+```
 
 首次启动：
-> [root@nginx ~]# service mysqld start
+
+```
+[root@nginx ~]# service mysqld start
+```
 
 Set a password:
-> [root@nginx ~]# /usr/bin/mysqladmin -u root password 123456
+
+```
+[root@nginx ~]# /usr/bin/mysqladmin -u root password 123456
+```
 
 设置开机自启动：
-> [root@nginx ~]# chkconfig mysqld on
+
+```
+[root@nginx ~]# chkconfig mysqld on
+```
 
 1. install varnish
 使用epel源
-> [root@localhost bin]# rpm -ivh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
+
+```
+[root@localhost bin]# rpm -ivh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
+```
 
 check varnish:
-> [root@localhost bin]# yum list|grep varnish
+
+```
+[root@localhost bin]# yum list|grep varnish
+```
 
 Startup:
-> [root@localhost bin]# service varnish start
+
+```
+[root@localhost bin]# service varnish start
+```
 
 Check:
-> [root@localhost bin]# varnishd -V
+
+```
+[root@localhost bin]# varnishd -V
+```
 
 For more details:
-[Varnish official User Guide](https://varnish-cache.org/docs/4.0/index.html#)
+> [Varnish official User Guide](https://varnish-cache.org/docs/4.0/index.html#)
 
 1. Install ZooKeeper
 - 启动
-> zookeeper-3.4.6/bin/zkServer.sh start
+
+```
+zookeeper-3.4.6/bin/zkServer.sh start
+```
 
 - 输入jps命令查看进程
+
+```
 1573 QuorumPeerMain
 1654 Jps
-
+```
 
 1. Set time zone
-> [root@demo81 Asia]# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-> [root@demo81 Asia]# vim /etc/sysconfig/clock
+```
+[root@demo81 Asia]# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+[root@demo81 Asia]# vim /etc/sysconfig/clock
+```
 
 Add line:
-> UTC=false or no — The hardware clock is set to local time.
+
+```
+UTC=false or no — The hardware clock is set to local time.
+```
 
 Reload:
-> [root@demo81 Asia]# /etc/init.d/ntpd restart
 
+```
+[root@demo81 Asia]# /etc/init.d/ntpd restart
 OR:
-> [root@dlp ~]# source /etc/sysconfig/clock
+[root@dlp ~]# source /etc/sysconfig/clock
+```
 
 Check:
-> [root@demo81 Asia]# date
+
+```
+[root@demo81 Asia]# date
   2016年 05月 26日 星期四 09:36:10 CST
+```
+
