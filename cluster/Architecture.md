@@ -11,6 +11,8 @@
 - which pattern to use
 trader-off between compute and communication costs
 
+MPP?
+
 ##### 1.1.2 Shared-Memory
 1. single machine, multiple processes
 Apply in:
@@ -20,6 +22,8 @@ Apply in:
 RDMA (Remote direct memory access)
 data-center network
 warehouse-scale computing
+
+NUMA?
 
 ##### 1.1.3 Shared-Storage
 - in 80's, NFS/DFS/Andrew
@@ -37,7 +41,10 @@ Ref Book:
 Three architecture for business server
 
 1. Symmetric Multi-Processing (SMP)  **主流服务器架构**
-对称多处理架构：多个CPU对称工作，无主次或从属关系
+
+**对称多处理架构**：多个CPU对称工作，无主次或从属关系
+
+```
 Share same physical memory, access to any address takes same time
 Thus is also called: 一致存储访问结构
 Uniform Memory Access (UMA)  
@@ -45,12 +52,14 @@ Feature: sharing
 Extension: more memory, faster CPU, more CPU, more i/o, more device
 Defect: extension limited
 Best practice: 2-4 CPUs
+```
 
 2. Massively Parallel Processing (MPP)
-海量并行处理结构: 多个SMP服务器（节点）互联而成
-完全无共享结构(Share Nothing)
-Thus：扩展能力最好，目前512个节点，数千个CPU
-MPP vs. NUMA
+- 海量并行处理结构: 多个SMP服务器（节点）互联而成
+- 完全无共享结构(Share Nothing)
+- Thus：扩展能力最好，目前512个节点，数千个CPU
+
+ MPP vs. NUMA
 | Criteria | MPP | NUMA |
 |--|:--|:--|
 | 节点互联机制 | I/O | inside same physical server |
@@ -58,25 +67,28 @@ MPP vs. NUMA
 | Usage | data warehouse, i/o | OLTP, little data, fast processing |
 
 3. Non-Uniform Memory Access (NUMA)
-非一致存储访问结构
-Feature: 多个CPU模块，每个模块多个CPU
-独立内存，I/O
-通过互联模块（eg. crossbar switch) 连接和信息交互
-支持上百个CPU
-Defects：远地内存延时太多
-系统性能无法线性增加
+- 非一致存储访问结构
+- Feature: 多个CPU模块，每个模块多个CPU
+- 独立内存，I/O
+- 通过互联模块（eg. crossbar switch) 连接和信息交互
+- 支持上百个CPU
+- Defects：远地内存延时太多
+- 系统性能无法线性增加
 
-[服务器三大体系SMP、NUMA、MPP介绍](http://server.51cto.com/sCollege-198840.htm)
-[Transitioning from SMP to MPP, the why and the how](https://blogs.technet.microsoft.com/dataplatforminsider/2014/07/30/transitioning-from-smp-to-mpp-the-why-and-the-how/)
-[Multi core basics: AMP and SMP](http://www.embedded.com/design/mcus-processors-and-socs/4429496/Multicore-basics)
+> [服务器三大体系SMP、NUMA、MPP介绍](http://server.51cto.com/sCollege-198840.htm)
+
+> [Transitioning from SMP to MPP, the why and the how](https://blogs.technet.microsoft.com/dataplatforminsider/2014/07/30/transitioning-from-smp-to-mpp-the-why-and-the-how/)
+
+> [Multi core basics: AMP and SMP](http://www.embedded.com/design/mcus-processors-and-socs/4429496/Multicore-basics)
 
 #### 3.2 多核系统三大架构
 1. SMP
 每个CPU内核运行一个独立的操作系统或同一操作系统的独立实例（instantiation）
 
-1. Asymmetric Multi-Processing (AMP)
-非对称多处理架构
-一个操作系统的实例可以同时管理所有CPU内核，且应用并不绑定某一个内核
+2. Asymmetric Multi-Processing (AMP)
+- 非对称多处理架构
+- 一个操作系统的实例可以同时管理所有CPU内核，且应用并不绑定某一个内核
+
 AMP vs. SMP
 | Criteria | AMP | SMP |
 |---|:--|:--|
@@ -84,6 +96,12 @@ AMP vs. SMP
 | OS | one CPU, one OS | multi CPU, share one OS |
 | Apply | less | more |
 
-1. Bound Multi-Processing (BMP)
-混合多处理架构
-一个操作系统的实例可以同时管理所有CPU内核，但每个应用被锁定于某个指定的核心
+3. Bound Multi-Processing (BMP)
+- 混合多处理架构
+- 一个操作系统的实例可以同时管理所有CPU内核，但每个应用被锁定于某个指定的核心
+
+#### 3.3 补充
+> Seemingly, SMP(UMP), NUMP and MPP refers to CPU and RAM architecture
+> And SMP, AMP, BMP refers to CPU and OS architecture
+
+Intel 用了很牛的技术  SMT （同步多线程），一个CPU同时可以执行两个线程，如双核CPU可以有4个逻辑处理器
