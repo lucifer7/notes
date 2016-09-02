@@ -50,6 +50,15 @@ data send in a series of chunks
 put: 幂等
 post: 非幂等
 
+1. 缓存击穿
+Cache stampedes / dogpile effect / dogpiling
+
+雪崩？
+
+1. Congestive collapse
+congestion prevents or limits useful communication
+choke point: incoming traffic exceeds outgoing bandwidth
+
 ### 3.0 SQL
 predicate 谓词
 OR 断言
