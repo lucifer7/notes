@@ -20,3 +20,11 @@ shadow  ALL=(ALL)       ALL
 再去普通用户下尝试
 ```
 
+### 1.2 更改用户密码
+```
+ # passwd
+OR:
+ $ passwd [user]
+```
+
+只有 root 用户可以修改别人的密码

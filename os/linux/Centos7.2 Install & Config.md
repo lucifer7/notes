@@ -18,7 +18,7 @@ ifconfig not found
 
 CentOS 7 minimal systems, use the commands “ip addr” and “ip link” to find the details of a network interface card. To know the statistics use “ip -s link”.
 
-**Install ifconfig**
+**Install ifconfig**his
 
 ```
 yum provides ifconfig
@@ -86,6 +86,16 @@ ping -c 4 192.168.1.9
 
 ```
 $ dhclient
+```
+
+6. yum "Couldn't resolve host 'mirrorlist.centos.org'" for CentOS 6
+```
+# vim /etc/resolv.conf
+
+And append:
+
+ nameserver 8.8.8.8 nameserver 8.8.4.4 nameserver 127.0.0.1
+
 ```
 
 ### 4. Install lrzsz Error

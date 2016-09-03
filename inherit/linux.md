@@ -25,6 +25,9 @@ DNS1=192.168.1.1
 USERCTL=no
 ```
 
+重启网络服务：
+> service network restart
+
 ### 1.2 Java
 
 **1.首先如何卸载原本的`openjdk`**
