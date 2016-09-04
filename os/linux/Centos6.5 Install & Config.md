@@ -9,6 +9,38 @@
 [root@localhost pcre-8.37]# ./configure & make & make install
 [root@localhost temp]# ./configure --prefix=/usr/local/nginx --conf-path=/usr/local/nginx/nginx.conf
 ```
+1. Simplier way to install nginx
+First, install Extra Packages for Enterprise Linux
+```
+$ sudo yum install epel-release
+```
+Then, install nginx:
+```
+$ sudo yum install nginx
+```
+Then, start ngix:
+```
+$ sudo /etc/init.d/nginx start
+```
+Config here:
+```
+$ sudo vim /etc/nginx/nginx.conf
+```
+Shutdown:
+```
+$ nginx -s quit
+```
+
+**注意：**
+普通用户无法启动 nginx, 其端口为80，1024以下的端口只有 root 能监听，
+有些文件也无法访问
+
+**解决：**
+切换 root 用户, /usr/sbin：
+```
+# chown root nginx
+# chmod u+s nginx
+```
 
 
 1. nginx startup cmd

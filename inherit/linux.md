@@ -54,6 +54,9 @@ java-1.4.2-gcj-compat-1.4.2.0-40jpp.115
 export JAVA_HOME=/usr/java/jdk1.6.0_22
 export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
 ```
+为系统更新方便，也可以在目录 /etc/profile.d 中新建文件 custom.sh，在其中配置环境变量
+
+然后 source filename
 
 ### 1.3 rz sz
 
@@ -97,6 +100,11 @@ export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
 
 
 ### 1.6 install tomcat as a service
+For normal user, if startup tomcat using **./startup.sh** error:
+> sudo chmod 755 bin
+
+Normal user cannot start tomcat, with error No JAVA_HOME was found:
+config environment variables into bin/catalina.sh
 
 ```
 #!/bin/bash
