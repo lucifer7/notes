@@ -51,9 +51,13 @@ put: 幂等
 post: 非幂等
 
 1. 缓存击穿
-Cache stampedes / dogpile effect / dogpiling
+Cache stampedes / dogpile effect / dog-piling
+
+? Definition: Unexpected increase in requests after cache invalid
 
 雪崩？
+解决：
+返回旧值、加锁某个线程去拿新值、单开一个线程拿值
 
 1. Congestive collapse
 congestion prevents or limits useful communication
