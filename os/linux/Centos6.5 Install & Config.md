@@ -268,3 +268,18 @@ Check:
   2016年 05月 26日 星期四 09:36:10 CST
 ```
 
+1. Vim show line number 显示行号
+```
+Find vimrc file:
+$ whereis vimrc
+$ sudo vim /etc/vimrc
+Add: set nu!
+```
+
+1. Vim 查找单词
+配置：
+> set insearch
+
+使用 /word 查找单词
+
+[vim 深造](http://coolshell.cn/articles/5426.html)
