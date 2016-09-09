@@ -31,6 +31,11 @@ Solutions see : https://www.iron.io/spikability-applications-ability-to/
 1. network bandwidth and latency
 带宽与延迟
 
+1. Actor模型
+Share Nothing 
+类似消息队列 
+相关： event sourcing, CQRS
+
 ### 2.0 Internet Association
 1. diminishing marginal returns
 边际收益递减
@@ -73,3 +78,18 @@ spatial index
 
 ### 4.0 Java Performance
 1. 
+
+### 5.0 Software Engineering
+1. MVP原则
+ Minimum Viable Product，最小可用产品
+ 
+2. OTT应用
+ over the top, eg. app store, wechat 
+ 
+3. Generic
+Non-trivial   非平凡，大型程序
+
+4. KISS principle
+Keep it simple, stupid
+   
+5.  

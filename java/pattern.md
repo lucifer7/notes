@@ -43,3 +43,14 @@ static inner class
 
 ### Ref Doc Url
 > [图说设计模式](http://design-patterns.readthedocs.io/zh_CN/latest/index.html)
+
+### Principles and OOP
+设计模式只有三个准则
+    组合而非继承
+    接口而非实现
+    高内聚，低耦合
+
+**Some data is just data and functions are just function**
+从程序中抽离数据，使用配置表格
+OOP的本质：对数据和与之关联的行为进行编程
+避免 if-else 或者抽象一堆Object或者Interface

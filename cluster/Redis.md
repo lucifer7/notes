@@ -70,6 +70,14 @@ For help:
 6. Redis benchmark
 > [root@localhost ~]# redis-benchmark -h 10.200.157.50 -p 6379 
 
+### 五种数据类型
+- 字符串
+- 散列表
+- 列表
+- 集合
+- 有序集合
+[Redis 五种数据类型](http://qifuguang.me/2015/09/29/Redis%E4%BA%94%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BB%8B%E7%BB%8D/)
+
 ### 订阅/发布机制
 - Redis 通过 PUBLISH 、 SUBSCRIBE 和 PSUBSCRIBE 等命令实现发布和订阅功能
 - 这些命令被广泛用于构建即时通信应用，比如网络聊天室(chatroom)和实时广播、实时提醒等
