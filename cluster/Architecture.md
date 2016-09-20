@@ -81,6 +81,8 @@ Best practice: 2-4 CPUs
 
 > [Multi core basics: AMP and SMP](http://www.embedded.com/design/mcus-processors-and-socs/4429496/Multicore-basics)
 
+> [Cluster Hardware Architecture](https://docs.oracle.com/cd/A91202_01/901_doc/rac.901/a89867/pshwarch.htm)
+
 #### 3.2 多核系统三大架构
 1. SMP
 每个CPU内核运行一个独立的操作系统或同一操作系统的独立实例（instantiation）

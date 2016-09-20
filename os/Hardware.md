@@ -30,6 +30,9 @@ Refresh |  Need refresh, 电容漏电, thus called dynamic |    No need for peri
 Applications  |  Main memory(eg. DDR3)           |            L2, L3 cache
 Typical size |   1G-2G| 4G-16G   
 
+SDRAM: Synchronous Dynamic Random Access Memory(同步动态随机存储器)
+Connect CPU and RAM with same clock, to share a same cycle, and work synchronously
+
 
 ```
 WIN7 下查看CPU缓存：
