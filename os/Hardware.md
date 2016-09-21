@@ -1,5 +1,9 @@
 ## CPU
 ### 1. 流水线
+Instruction pipeline 
+
+**Instruction-level parallelism** 
+
 五级流水线处理器
 ![CPU 五级流水线处理器](https://pic3.zhimg.com/1e3667161c3307d95cf5d863dbe435fe_b.png)
 - 级别更多：
@@ -25,6 +29,9 @@ Bit stored in | separate capacitor in integrated circuit | bistable latching cir
 Refresh |  Need refresh, 电容漏电, thus called dynamic |    No need for periodical refresh
 Applications  |  Main memory(eg. DDR3)           |            L2, L3 cache
 Typical size |   1G-2G| 4G-16G   
+
+SDRAM: Synchronous Dynamic Random Access Memory(同步动态随机存储器)
+Connect CPU and RAM with same clock, to share a same cycle, and work synchronously
 
 
 ```
@@ -63,4 +70,21 @@ Linux 下查看CPU:
 ## Networking
 OSI七层模型
 ![OSI](http://hi.csdn.net/attachment/201201/5/0_1325744597WM32.gif)
+
+## Architecture
+### 1. Von Neumann VS. Harvard architecture
+Harvard has seperate data and instauction busses, possible to have seperate memory sytem, therefor usage of cache is higher after start up.
+
+In Von Neumann, Processors need two clock cycles to complete an instruction, and thus Pipelining the instructions is not possible.
+
+In Harvard, Processor can complete an instruction in one cycle if appropriate pipelining strategies are implemented.
+
+Most of the modern computing architectures are based on Harvard(?? not von neumann ) 
+感觉此处不靠谱  
+另一种说法： 
+Harvard is for small embedded computers and signal processing; 
+Von Neumann is for desktop, laptops, workstation and high performance computer.
+[Click to see slides here](http://www.slideshare.net/matungaolson/von-neumann-vs-harvard-architecture)
+
+
 

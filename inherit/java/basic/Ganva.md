@@ -673,5 +673,3 @@ Guava 提供了很多string的内置工具，包括Joiner Spliter
 2. 支持强引用，若引用的锁
 3. 支持`lock`,`semaphore`等常用的线程工具
 
-
-

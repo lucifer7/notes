@@ -13,6 +13,14 @@
 
 [RMQ (Range Minimal Query) 问题 ，稀疏表 ST](http://www.cnblogs.com/549294286/p/3780794.html)
 
+### 布隆过滤器 Bloom Filter
+A probabilistic data structure 
+Using a **bit vector** 
+Usage: tells if a elements either **definitely** is not in the set or **may be** in the set
+Benefit: rapid and memory-efficient
+
+[Intro and Example](http://billmill.org/bloomfilter-tutorial/)
+
 ### Notice
 1. 时间复杂度
 DEF: 用来检验某个算法处理一定量的数据要花多长时间
