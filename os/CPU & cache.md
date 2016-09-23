@@ -62,3 +62,80 @@ Ref: 缓存关联性（cache associativity），缓存组（cache sets），使�
 use by most device
 
 1.1.2 基于目录的协议 directory-based 
+
+### Barrier, Visibility and Mutex
+#### Terms
+- 可见性： 
+共享变量值，一个线程修改，其他能看见
+- 共享变量：
+一个变量在多个线程的工作内存中都有副本
+
+#### JMM（Java Memory Model）Java内存模型
+线程对共享变量的操作只能在工作内存中进行，不能直接读取主存
+![JMM 内存模型](https://segmentfault.com/img/bVrbuK)
+可见性的实现：synchronize and volatile
+synchronized 两点要求：
+1. unlock之前，共享变量必须刷新至主存
+2. 加锁时重新加载主存中的共享变量
+
+##### Workflow of lock and unlock：
+1. 获得互斥锁
+2. 清空工作内存
+3. 从主存拷贝变量的最新副本到工作内存
+4. 执行代码
+5. 更新后的变量刷新到主存
+6. 释放互斥锁
+Q: 未更改的变量是否一同刷新？
+
+##### 重排序
+代码书写顺序与实际执行顺序不同，可能的优化：
+1. 编译器优化重排序（编译器优化）
+2. 指令级并行重排序（处理器优化）
+3. 内存系统重排序（处理器优化）
+可能会导致：
+某些变量的操作会在后面的变量之前执行，比如终止条件后获取不到最终的结果值
+
+解决：
+可用 volatile，即 as-if-serial，程序执行的结果与代码顺序执行的结果一致
+
+#### Mutex 互斥机制
+1. Synchronize
+when to use:
+writing a variable might be read by other threads; 
+reading a variable might be written by other threads;
+both reader and writer must use same monitor lock
+
+用途：
+Visibility and mutex
+
+#### volatile and visibility
+volatile 只能保证共享变量的可见性和读写操作的原子性？
+volatile 原理：
+volatile 类型的变量，转化为汇编后，增加 lock add1.. 指令, this will cause:
+1. write present processor cache line back to main memory
+2. write back action invalidates caches in other processors
+
+安全地使用 volatile 变量：
+1. 对变量的操作不依赖当前值
+> 不满足：count++；count=count+1;
+   满足：Boolean变量，温度值等。
+   
+2. 变量没有包含在其他变量的不变式中
+>  不满足：不变式，low<up.
+
+#### Atomic 原子性
+##### CPU原子性实现：
+1. 总线锁定
+eg. a thread execute _i++_ on CPU1, will lock bus - communication between memory and other CPU, to ensure other tasks not changing the value of i in memory,
+but other instructions will not execute during the lock.
+2. 缓存锁定
+only lock the address of variable in memory, and only allows CPU1 to write back new value, and invalidate the cache in other CPUs
+
+##### Java原子性实现
+使用CAS循环
+
+Reference: 
+TO Read
+[互斥锁和内存可见性](http://blog.csdn.net/gqtcgq/article/details/52330065)
+[CON02-C. Do not use volatile as a synchronization primitive](https://www.securecoding.cert.org/confluence/display/c/CON02-C.+Do+not+use+volatile+as+a+synchronization+primitive)
+[Memory Barriers: a Hardware View for Software Hackers](http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2009.04.05a.pdf)
