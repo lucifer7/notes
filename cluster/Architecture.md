@@ -107,3 +107,8 @@ AMP vs. SMP
 > And SMP, AMP, BMP refers to CPU and OS architecture
 
 Intel 用了很牛的技术  SMT （同步多线程），一个CPU同时可以执行两个线程，如双核CPU可以有4个逻辑处理器
+
+SMT v.s. Hyper Threading
+SMT: an architecture feature of some processors
+allows multiple thread to issue instructions on each cycle(same time ?)
+Hyper-Threading is a specific implementation of SMT
