@@ -1,6 +1,7 @@
 
-### Centos6.5
-1. install tomcat, jdk, nginx
+## Centos6.5
+### Basic Install
+#### 1. install tomcat, jdk, nginx
 
 ```
 [root@localhost temp]# tar -zxvf apache-tomcat-7.0.68.tar.gz -C ../tomcat
@@ -9,7 +10,8 @@
 [root@localhost pcre-8.37]# ./configure & make & make install
 [root@localhost temp]# ./configure --prefix=/usr/local/nginx --conf-path=/usr/local/nginx/nginx.conf
 ```
-1. Simplier way to install nginx
+- Simplier way to install nginx
+
 First, install Extra Packages for Enterprise Linux
 ```
 $ sudo yum install epel-release
@@ -41,17 +43,14 @@ $ nginx -s quit
 # chown root nginx
 # chmod u+s nginx
 ```
-
-
-1. nginx startup cmd
+- nginx startup cmd
 
 ```
 [root@localhost ~]# /usr/local/nginx/sbin/nginx
 [root@localhost ~]# netstat -ano |grep 80
 ```
 
-
-1. Install tomcat as a service
+#### 2. Install tomcat as a service
 
 Change to the /etc/init.d directory and create a script called 'tomcat' as shown below.
 ```
@@ -90,20 +89,6 @@ exit 0
 
 
 > [Tomcat install reference url](http://www.davidghedini.com/pg/entry/install_tomcat_7_on_centos)
-
-1. Install Redis
-
-```
-vi /etc/redis/redis.conf
-```
-
-> 仅修改： daemonize yes （no-->yes）
-
-```
-echo "/usr/local/bin/redis-server /etc/redis/redis.conf &" >> /etc/rc.local
-```
-
-> [CentOS6 安装 Redis](https://segmentfault.com/a/1190000002685224)
 
 ```
 [root@srv6 init.d]# chmod 755 tomcat
@@ -152,14 +137,27 @@ Chain OUTPUT (policy ACCEPT)
 num  target     prot opt source               destination
 
 ```
-1. redis install
+
+#### 3. Install Redis
 
 ```
 [root@nginx redis]# make && make install
 [root@nginx redis]# redis-server /etc/redis/redis.conf
 ```
 
-1. install mysql
+```
+vi /etc/redis/redis.conf
+```
+
+> 仅修改： daemonize yes （no-->yes）
+
+```
+echo "/usr/local/bin/redis-server /etc/redis/redis.conf &" >> /etc/rc.local
+```
+
+> [CentOS6 安装 Redis](https://segmentfault.com/a/1190000002685224)
+
+#### 4. install mysql
 查看 mysql：
 
 ```
@@ -197,7 +195,7 @@ Set a password:
 [root@nginx ~]# chkconfig mysqld on
 ```
 
-1. install varnish
+#### 5. install varnish
 使用epel源
 
 ```
@@ -225,7 +223,14 @@ Check:
 For more details:
 > [Varnish official User Guide](https://varnish-cache.org/docs/4.0/index.html#)
 
-1. Install ZooKeeper
+#### 6. Install Maven
+wget and tar and config the env.
+
+For mvnw:
+
+https://github.com/takari/maven-wrapper
+
+#### 1. Install ZooKeeper
 - 启动
 
 ```
@@ -239,7 +244,8 @@ zookeeper-3.4.6/bin/zkServer.sh start
 1654 Jps
 ```
 
-1. Set time zone
+### Configuration
+### 1. Set time zone
 
 ```
 [root@demo81 Asia]# cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
@@ -268,6 +274,19 @@ Check:
   2016年 05月 26日 星期四 09:36:10 CST
 ```
 
+#### 2. 环境变量 $PATH
+
+```
+# echo 'pathmunge /usr/local/maven/bin' > /etc/profile.d/mvn.sh
+# chmod +x /etc/profile.d/mvn.sh
+# . /etc/profile
+# echo $PATH
+/usr/local/maven/bin:/usr/lib64/qt-3.3/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/jdk/bin:/usr/local/jdk/jre/bin:/root/bin:/usr/local/jdk/bin:/usr/local/jdk/jre/bin
+```
+pathmunge 是redhat版本中系统变量profile中的函数，判断当前系统是否有此命令，如果没有，放置在之前或之后 ？
+
+
+#### 3. vim
 1. Vim show line number 显示行号
 ```
 Find vimrc file:
