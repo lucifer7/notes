@@ -55,18 +55,13 @@ Best practice: 2-4 CPUs
 ```
 
 2. Massively Parallel Processing (MPP)
+
 - 海量并行处理结构: 多个SMP服务器（节点）互联而成
 - 完全无共享结构(Share Nothing)
 - Thus：扩展能力最好，目前512个节点，数千个CPU
 
- MPP vs. NUMA
-| Criteria | MPP | NUMA |
-|--|:--|:--|
-| 节点互联机制 | I/O | inside same physical server |
-| 内存访问机制 | access only local | access to all, remote delays |
-| Usage | data warehouse, i/o | OLTP, little data, fast processing |
-
 3. Non-Uniform Memory Access (NUMA)
+
 - 非一致存储访问结构
 - Feature: 多个CPU模块，每个模块多个CPU
 - 独立内存，I/O
@@ -74,6 +69,13 @@ Best practice: 2-4 CPUs
 - 支持上百个CPU
 - Defects：远地内存延时太多
 - 系统性能无法线性增加
+
+ MPP vs. NUMA
+| Criteria | MPP | NUMA |
+|--|:--|:--|
+| 节点互联机制 | I/O | inside same physical server |
+| 内存访问机制 | access only local | access to all, remote delays |
+| Usage | data warehouse, i/o | OLTP, little data, fast processing |
 
 > [服务器三大体系SMP、NUMA、MPP介绍](http://server.51cto.com/sCollege-198840.htm)
 
@@ -88,6 +90,7 @@ Best practice: 2-4 CPUs
 每个CPU内核运行一个独立的操作系统或同一操作系统的独立实例（instantiation）
 
 2. Asymmetric Multi-Processing (AMP)
+
 - 非对称多处理架构
 - 一个操作系统的实例可以同时管理所有CPU内核，且应用并不绑定某一个内核
 
@@ -99,11 +102,13 @@ AMP vs. SMP
 | Apply | less | more |
 
 3. Bound Multi-Processing (BMP)
+
 - 混合多处理架构
 - 一个操作系统的实例可以同时管理所有CPU内核，但每个应用被锁定于某个指定的核心
 
 #### 3.3 补充
 > Seemingly, SMP(UMP), NUMP and MPP refers to CPU and RAM architecture
+
 > And SMP, AMP, BMP refers to CPU and OS architecture
 
 Intel 用了很牛的技术  SMT （同步多线程），一个CPU同时可以执行两个线程，如双核CPU可以有4个逻辑处理器
