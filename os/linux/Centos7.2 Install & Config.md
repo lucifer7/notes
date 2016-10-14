@@ -18,7 +18,7 @@ ifconfig not found
 
 CentOS 7 minimal systems, use the commands “ip addr” and “ip link” to find the details of a network interface card. To know the statistics use “ip -s link”.
 
-**Install ifconfig**his
+**Install ifconfig**
 
 ```
 yum provides ifconfig
@@ -68,6 +68,7 @@ IPV6_PEERROUTES="yes"
 IPV6_PRIVACY="no"
 *NM_CONTROLLED=no       #不通过网络管理器管理
 *IPADDR=192.168.1.15    #must
+*DNS1={DNS}
 ```
 
 4. 重启网络服务：
