@@ -50,3 +50,8 @@ OR:
 - 一般权限, Read(4), Write(2), X(1), non(0)
 - 特殊权限，变更文件或者目录
 ![Linux 文件的用户权限分析图](http://man.linuxde.net/wp-content/uploads/2013/11/chmod.gif)
+
+### 1.5 systemd
+Unix System V(System Five): one of the first commercial versions of the Unix OS. Abbreviated to SysV.
+
+systemd is an improvement of SysV init system.

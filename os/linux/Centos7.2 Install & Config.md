@@ -25,6 +25,7 @@ yum provides ifconfig
 yum install net-tools
 ```
 
+**Mind: BOTH _ifconfig_ and _netstat_ is obsolete, use _ip_ and _ss_ instead.**
 
 ### 3. 配置静态IP地址
 1. 查看网络管理器服务的状态：
@@ -159,8 +160,25 @@ $ hostnamectl status
 
 对于静态/瞬态主机名，任何特殊字符或空格都会被移除，字母转小字。修改静态主机名，/etc/hostname 将被自动更新。但/etc/hosts需要手动更新。
 
+### 7. User and SSH
+Initial new server by new user and SSH:
+[New Server Initial](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-centos-7)
 
+### 8. Configuring Basic Firewall
+Start up _firewalld_:
+```
+sudo systemctl start firewalld
+```
+Allow SSH with default port:
+```
+sudo firewall-cmd --permanent --add-service=ssh
+```
+Timezone config:
+```
+sudo timedatectl
+sudo timedatectl set-timezone Asia/Shanghai
 
-
-
+ntpdate time.windows.com 
+hwclock -w 
+```
 
