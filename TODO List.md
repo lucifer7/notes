@@ -6,13 +6,16 @@ Update at: 2016-06-14
 
 Pending till new machine...
 1. Restore dev environment (IDEA, VM, CENTOS 6.5)
+```
 1.1 192.168.1.16    jdk, tomcat, redis-a, rocketmq-a                Data Cache and MQ master Server
 1.2 192.168.1.17    jdk, tomcat, redis-b, rocketmq-b                Data Cache and MQ slave Server
 1.3 192.168.1.18    jdk, tomcat, svn, nexus, jerkins                Contineous Integration Server
 1.4 192.168.1.19    jdk, tomcat, mysql                              Database Server
 1.5 192.168.1.20    jdk, tomcat(webapp)                             Application Server
 1.6 192.168.1.21    jdk, nginx, varnish                             Load Balance Server
-1.7 192.168.1.22    jdk, tomcat, rocketmq-b, ab, HttpErf            Test Server
+1.8 192.168.1.22    centos 7+, docker                               Container Server
+1.7 192.168.1.23    jdk, tomcat, rocketmq-b, ab, HttpErf            Test Server
+```
 
 1. Install benchmark test environment on Yoga
 
