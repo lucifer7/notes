@@ -36,6 +36,10 @@ Share Nothing
 类似消息队列 
 相关： event sourcing, CQRS
 
+1. Arity
+The number of arguments to a function is called it's arity, and is used to help identify the functions. 
+函数的参数数量称为元数 (arity)，用于帮助标识函数。
+
 ### 2.0 Internet Association
 1. diminishing marginal returns
 边际收益递减
