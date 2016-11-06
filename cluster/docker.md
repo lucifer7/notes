@@ -34,3 +34,18 @@ packaged with all its dependencies and libraries(environment)
 2. Control Groups: a part of LXC(Linux Control), an OS level virtualization method for running multiple isolated Linux systems(containers)
 3. UnionFS: file system, create user layer
 
+## Officail getstarted
+### starter
+1. run a hello world to check
+$ sudo docker run hello-word
+run: create & run a container
+hello-world: image to load into the container
+? option -rm means ..?
+
+2. list all containers
+$ docker ps -a
+
+image: is a filesystem and parameters to use at runtime
+doesn't have state and never changes
+
+Container: a running instance of an image
