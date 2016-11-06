@@ -98,46 +98,6 @@ exit 0
 
 > [reference url](http://www.davidghedini.com/pg/entry/install_tomcat_7_on_centos)
 
-1. load balacing
-
-```
-http {
-    upstream app {
-        server localhost:8080;
-    }
-}
-server {
-    local / {
-        proxy_pass http://app;
-    }
-}
-```
-
-
-1. nginx iptables [remove  ]
-```
-[root@nginx nginx]# iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
-[root@nginx nginx]# /etc/init.d/iptables status
-表格：filter
-Chain INPUT (policy ACCEPT)
-num  target     prot opt source               destination
-1    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:8080
-2    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:80
-3    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
-4    ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
-5    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
-6    ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:22
-7    REJECT     all  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-host-prohibited
-
-Chain FORWARD (policy ACCEPT)
-num  target     prot opt source               destination
-1    REJECT     all  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-host-prohibited
-
-Chain OUTPUT (policy ACCEPT)
-num  target     prot opt source               destination
-
-```
-
 #### 3. Install Redis
 
 ```

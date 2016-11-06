@@ -117,3 +117,52 @@ SMT v.s. Hyper Threading
 SMT: an architecture feature of some processors
 allows multiple thread to issue instructions on each cycle(same time ?)
 Hyper-Threading is a specific implementation of SMT
+
+### 4 Design of System
+#### 4.1 Building block
+**decomposition and combination**
+分解和组合
+
+1. System bus
+系统总线
+separate producer and consumer
+
+2. Routing
+路由
+external route: different input --> |dispatch| --> component
+internal route: service level, eg.consul, way like pattern matching
+
+**Mind data**
+Identify its ID before reaching Bus, called data normalization/data encapsulation 
+
+3. Queue
+A special version of bus + route\[optional\] + storage  ?
+amends for the speed collapse of consumer and producer
+ 
+ 4. Pub/Sub
+ An candidate for route
+ Managed by Publisher
+ 
+ 4. Protocol
+ To communicate though bus or queue, we need a **protocol** to define behaviour.
+ like an SLA, service level agreement
+ 
+ #### 4.2 vital services
+ 1. sweeping
+ 代谢
+ exception close, restart, restore... 
+ eg. supervisor/child process in erlang, supervision tree(like nginx)
+ 
+ 2. High Availability
+ 
+ 3. Security
+ divide into initiative and passive(主动安全与被动安全)
+Initiative: authentication/authorization + TLS + encrypt + minimum input/output
+Passive: firewall
+
+4. Overdraft protection
+透支保护
+auto scaling/back pressure/Service degradation
+
+Reference:
+[软件设计杂谈](http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&mid=207078329&idx=1&sn=14070c2bc5f24af58e951c8a926964e0#rd)
