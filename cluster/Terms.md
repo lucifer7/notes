@@ -19,6 +19,19 @@ how an application can handle spiky behavior
 物联网(us)
 OR: IoT(Internet of Things)
 
+1. Actor模型
+Share Nothing 
+类似消息队列 
+相关： event sourcing, CQRS
+
+1. Arity
+The number of arguments to a function is called it's arity, and is used to help identify the functions. 
+函数的参数数量称为元数 (arity)，用于帮助标识函数。
+
+1. thrashing
+（系统）抖动, memory page 
+
+### 2.0 Internet Association
 1. 多跳网络（multi-hop），以及自组织网络（ad-hoc）
 
 Solutions see : https://www.iron.io/spikability-applications-ability-to/
@@ -31,16 +44,6 @@ Solutions see : https://www.iron.io/spikability-applications-ability-to/
 1. network bandwidth and latency
 带宽与延迟
 
-1. Actor模型
-Share Nothing 
-类似消息队列 
-相关： event sourcing, CQRS
-
-1. Arity
-The number of arguments to a function is called it's arity, and is used to help identify the functions. 
-函数的参数数量称为元数 (arity)，用于帮助标识函数。
-
-### 2.0 Internet Association
 1. diminishing marginal returns
 边际收益递减
 

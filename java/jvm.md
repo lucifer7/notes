@@ -1,15 +1,14 @@
+
+#### 1. 搞不清楚的概念
 变量槽
 操作数栈
-
 
 基于栈的指令集
 区别于Android，基于寄存器
 
 [Reference url](http://wiki.jikexueyuan.com/project/java-vm/storage.html)
 
-
-
-#### 2.2 活跃分析 Liveness analysis 
+#### 2. 活跃分析 Liveness analysis 
 考虑变量的生存期
 - any-path backward data-flow analysis
 
@@ -28,3 +27,9 @@ JAVA的new Object()在字节码中是两条指令
 - invokespecial 会调用构造器
 
 什么栈上创建啊，逃逸分析啊，标量替换啊.....
+
+#### 3. Synthetic 
+
+JMX
+Java Management Extension
+服务治理
