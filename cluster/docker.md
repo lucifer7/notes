@@ -94,11 +94,63 @@ push image to online
 > $ docker push skyvoice/docker-whale
 
 ### Manage images
-1. remove image
+1. list images
+> $ docker images
+
+2. remove image
 ``` 
     $ docker rmi -f 7d9495d03763
     $ docker rmi -f docker-whale
 ```
+
+3. daemonized container
+```
+query Docker daemon, list containers
+[docker@dockermount docker]$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS               NAMES
+657b964200ef        ubuntu              "/bin/sh -c 'while tr"   About a minute ago   Up About a minute                       suspicious_kilby
+Or add flag -l, show only last container started.
+add flag -a, show all containers.
+add flag -q, show container ids only.
+
+We can use NAME of this container to query execution logs:
+[docker@dockermount docker]$ docker logs suspicious_kilby
+It looks inside the container, and shows the standard output of a container.
+
+And to stop this container:
+[docker@dockermount docker]$ docker stop suspicious_kilby
+
+```
+
+### Run container
+1. Run command
+> $ docker run ubuntu /bin/echo 'hello ubuntu'
+
+2. Run interactive container
+> $ docker run -t -i ubuntu /bin/bash
+-t assigns a pseudo-tty or terminal inside the container
+-i grabd teh standard input[STDIN] of the container, allow you to make an interactive connection
+
+### Run application
+```
+See port mapping:
+$ docker port #name 5000
+
+View logs:
+$ docker logs -f #name
+
+List processes:
+$ docker top #name
+
+Stop and remove
+$ docker stop #name
+$ docker rm #name
+
+Remove all container:
+$ docker rm $(docker ps -aq)
+```
+#### Note
+**Removing a container is final(cannot undo)**
 
 ## Notice
 ### TO remember/
@@ -135,3 +187,7 @@ use environment variables
 
 **Source:**
 [10 things to avoid in docker containers](http://developers.redhat.com/blog/2016/02/24/10-things-to-avoid-in-docker-containers/)
+
+
+## TO Be continue
+[Networking containers](https://docs.docker.com/engine/tutorials/networkingcontainers/)
