@@ -1,42 +1,45 @@
 # Docker
-## Install
+## 1. Install
 Requires Kernel 3.0+, and update library before install
 
 [Install on CentOS Guidance](https://docs.docker.com/engine/installation/linux/centos/)
 
-## Introduction
-### Usage
+## 2. Introduction
+### 2.1 Usage
 container, isolate applications
 packaged with all its dependencies and libraries(environment)
 
-### Workflow
+### 2.2 Workflow
 1. Get codes and dependencies tio container
 2. Configure network or storage(optional)
 3. Upload builds to a registry
 4. Swarm cluster and scale(optional)
 5. Deploy
 
-### Structure
-#### Components
+A kind of _namespace_ tool?
+Concentrates on 调度 and 编排 ？
+
+### 2.3 Structure
+#### 2.3.1 Components
 1. Docker Client: UI, communicate with Daemon
 2. Docker Daemon: sits on host, answers request
 3. Docker Index: centralized registry
 
-#### Elements
+#### 2.3.2 Elements
 1. Docker Containers: responsible for app's running, including OS, user files and meta data
 2. Docker Images: read-only templates, help launch Docker containers
 3. DOckerFile: file housing instructions, help automate image creation
 
 [Docker Structure](http://blog.flux7.com/hs-fs/hub/411552/file-1222264954-png/blog-files/image-1.png?t=1476806838474&width=696&height=392&name=image-1.png)
 
-#### Support by OS
+#### 2.3.3 Support by OS
 1. Namespaces: first level of isolation
 2. Control Groups: a part of LXC(Linux Control), an OS level virtualization method for running multiple isolated Linux systems(containers)
 3. UnionFS: file system
 
 docker namespaces --> namespaces --> physical memory ?
 
-#### Docker Registry
+#### 2.3.4 Docker Registry
 
 Shelve progress:
 
@@ -47,8 +50,8 @@ And official doc and guide:
 
 [Hello world in a container](https://docs.docker.com/engine/tutorials/dockerizing/)
 
-## Official getstarted
-### starter
+## 3. Official getstarted
+### 3.1 starter
 1. run a hello world to check
 $ sudo docker run hello-word
 run: create & run a container
@@ -93,7 +96,7 @@ push image to online
 > $ docker login
 > $ docker push skyvoice/docker-whale
 
-### Manage images
+### 3.2 Manage images
 1. list images
 > $ docker images
 
@@ -122,7 +125,7 @@ And to stop this container:
 
 ```
 
-### Run container
+### 3.3 Run container
 1. Run command
 > $ docker run ubuntu /bin/echo 'hello ubuntu'
 
@@ -131,7 +134,7 @@ And to stop this container:
 -t assigns a pseudo-tty or terminal inside the container
 -i grabd teh standard input[STDIN] of the container, allow you to make an interactive connection
 
-### Run application
+### 3.4 Run application
 ```
 See port mapping:
 $ docker port #name 5000
@@ -152,8 +155,40 @@ $ docker rm $(docker ps -aq)
 #### Note
 **Removing a container is final(cannot undo)**
 
+### 3.5 Network container
+1. Name your container:
+> $ docker run -d -P --name web training/webapp python app.py
+
+2. Docker provides two network drivers: _bridge_(Default) and _overlay_.
+Use _network_ sub command to list them:
+> $ docker network ls
+
+3. View Network info of container:
+> [docker@dockermount ~]$ docker network inspect bridge
+
+4. Create your own network:
+> [docker@dockermount ~]$ docker network create -d bridge my-bridge-net
+
+5. Connect your newly running container to this network:
+> [docker@dockermount ~]$ docker network connect my-bridge-net web
+
+6. Then try _ping_ each other in two containers:
+> $ docker exec -it db bash
+
+#### Note
+**You can attach many network to a container, but two containers can reach other only in the same network**
+
+### 3.6 Manage data in container
+1. Data volume
+A specially-designed directory, within one or more containers that bypasses the Union File System(operates by creating layers, making them very lightweight and fast)
+Designed to persist data, even container is removed
+
+Add a data volume to container:
+> [docker@dockermount ~]$ docker run -d -P --name web -v /webapp training/webapp python app.py
+
+
 ## Notice
-### TO remember/
+### TO remember
 #### Advantages
 1. containers are immutable
 same image tested by QA will reach production environment with same behaviour
@@ -188,6 +223,16 @@ use environment variables
 **Source:**
 [10 things to avoid in docker containers](http://developers.redhat.com/blog/2016/02/24/10-things-to-avoid-in-docker-containers/)
 
+### Benefits
+1. Try new Tech at low cost
+Using images in the Hub
+
+2. Test and run with consistency
+
+3. Build a dev environment 
+
+
+
 
 ## TO Be continue
-[Networking containers](https://docs.docker.com/engine/tutorials/networkingcontainers/)
+[Manage data in container](https://docs.docker.com/engine/tutorials/dockervolumes/)

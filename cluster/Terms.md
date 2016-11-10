@@ -31,6 +31,11 @@ The number of arguments to a function is called it's arity, and is used to help 
 1. thrashing
 （系统）抖动, memory page 
 
+1. cgroups
+control groups
+a Linux kernel feature
+limits, accounts for, and isolates the resource usage(CPU, memory, disk i/o, network, etc.) of a collection of processes.
+
 ### 2.0 Internet Association
 1. 多跳网络（multi-hop），以及自组织网络（ad-hoc）
 
