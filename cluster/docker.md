@@ -186,6 +186,23 @@ Designed to persist data, even container is removed
 Add a data volume to container:
 > [docker@dockermount ~]$ docker run -d -P --name web -v /webapp training/webapp python app.py
 
+**To be continue....**
+
+### 3.7 Docker Certicates for both daemon and client
+For detailed procedures:
+[Protect the Docker daemon socker](https://docs.docker.com/engine/security/https/)
+
+**Note:**
+By default, Docker runs via a non-networked Unix socket. Config using an HTTP socket if you need communicate.
+
+**$HOST in the doc is the ip addr of daemon server, not dns**
+
+$ echo subjectAltName = IP:10.200.157.84,IP:10.200.157.48,IP:127.0.0.1 > extfile.cnf
+
+**Mind**
+To integrate with Spring boot on Windows, plz install docker-install.exe and DockerToolbox-1.12.2.exe. They will auto create a vm with installed docker.
+
+Connect to docker VM by docker/tcuser
 
 ## Notice
 ### TO remember
