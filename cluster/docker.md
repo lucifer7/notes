@@ -201,6 +201,9 @@ $ echo subjectAltName = IP:10.200.157.84,IP:10.200.157.48,IP:127.0.0.1 > extfile
 
 **Mind**
 To integrate with Spring boot on Windows, plz install docker-install.exe and DockerToolbox-1.12.2.exe. They will auto create a vm with installed docker.
+[Update 2016-11-15]
+Boot2docker cannot push images into Hub, for unknown reason.
+Use Linux Docker daemon server instead.
 
 Connect to docker VM by docker/tcuser
 
