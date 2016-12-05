@@ -100,8 +100,10 @@ And append:
 
 ```
 
-7. Destination unreachable
+7. Destination unreachable / No route to host / 断网等各种事件
 因为VM ware Bridge 模式无法使用，在虚拟机网络编辑器里重置默认值，然后在win10宿主机中为VM net的属性中选上Bridge protocol.
+
+究极大法：Shutdown all VMs, Reboot Host, Reset VMware adapter, Boot VMs, Shutdown firewall
 
 ### 4. Install lrzsz Error
 
