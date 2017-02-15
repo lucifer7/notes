@@ -8,6 +8,9 @@
 
 [Reference url](http://wiki.jikexueyuan.com/project/java-vm/storage.html)
 
+Stack Frame: including slot and operand stack
+JVM instruction set is based on operand stack, which distinguishes from physical machine that is based on register.
+
 #### 2. 活跃分析 Liveness analysis 
 考虑变量的生存期
 - any-path backward data-flow analysis
