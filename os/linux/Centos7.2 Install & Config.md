@@ -70,6 +70,9 @@ IPV6_PRIVACY="no"
 *NM_CONTROLLED=no       #不通过网络管理器管理
 *IPADDR=192.168.1.15    #must
 *DNS1={DNS}
+*IPADDR=10.200.157.84
+*NETMASK=255.255.255.0
+*DNS1=10.133.1.254
 ```
 
 4. 重启网络服务：
@@ -97,10 +100,22 @@ $ dhclient
 And append:
 
  nameserver 8.8.8.8 nameserver 8.8.4.4 nameserver 127.0.0.1
-
 ```
 
-7. Destination unreachable / No route to host / 断网等各种事件
+7. If still failed to connect outer network:
+ ```
+/etc/sysconfig/network:
+
+NETWORKING=yes
+HOSTNAME=centos7
+GATEWAY=10.0.0.1
+/etc/resolv.conf:
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
+
+8. Destination unreachable / No route to host / 断网等各种事件
 因为VM ware Bridge 模式无法使用，在虚拟机网络编辑器里重置默认值，然后在win10宿主机中为VM net的属性中选上Bridge protocol.
 
 究极大法：Shutdown all VMs, Reboot Host, Reset VMware adapter, Boot VMs, Shutdown firewall

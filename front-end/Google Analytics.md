@@ -49,8 +49,13 @@ Error: src/MD2.c:31:20: fatal error: Python.h: No such file or directory      #i
 Solution:
 > yum install python-devel
 
+> yum install gcc libffi-devel python-devel openssl-devel
+
 ## Run
 > npm start
+
+> Error in plugin 'gulp-gm'
+Error: Command failed: gm identify: No decode delegate for this image format (/usr/local/google-analytics/ga-dev-tools/gmz8n2ev).
 
 Report a error, perhaps due to missing images...?
 
