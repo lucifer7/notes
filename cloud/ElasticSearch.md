@@ -21,6 +21,7 @@ path.logs=/tmp/elasticsearch/logs
 network.host=centos2
 network.port=9200
 ```
+Or set network.host=0.0.0.0, allow connection by IP.
 
 
 1. 其他的选项保持默认，然后启动ES：
@@ -37,7 +38,6 @@ Exception in thread "main" java.lang.RuntimeException: don't run elasticsearch a
 	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:270)
 	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:35)
 ```
-
 
 Caused by:
 > 这是出于系统安全考虑设置的条件。由于ElasticSearch可以接收用户输入的脚本并且执行，为了系统安全考虑， 
@@ -65,6 +65,8 @@ Caused by:
 36540 Elasticsearch
 ```
 
+Or, run instead:
+> bin/elasticsearch -Des.insecure.allow.root=true
 
 1. Vistit site to check 
 > http://10.200.157.50:9200/
@@ -117,3 +119,7 @@ QUERY_STRING 一些可选的查询请求参数，例如?pretty参数将使请求
 BODY 一个JSON格式的请求主体（如果请求需要的话）
 ```
 
+### Kibana
+Run docker image:
+> docker pull kibana
+> $ docker run --name some-kibana -e ELASTICSEARCH_URL=http://some-elasticsearch:9200 -p 5601:5601 -d kibana
