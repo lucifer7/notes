@@ -58,6 +58,9 @@ export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
 
 然后 source filename
 
+if access permission error, run with *sudo*. If *sudo which java* reports no java error, create a soft link in /usr/bin:
+> ln -s /usr/local/jdk/bin/java /usr/bin/java
+
 ### 1.3 rz sz
 
 `yum -y install lrzsz `

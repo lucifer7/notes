@@ -1,7 +1,10 @@
 ### ElasticSearch Install
 1. [Guidance Book](http://es.xiaoleilu.com/010_Intro/00_README.html)
 
-Download: [elasticsearch-2.3.3.tar.gz](https://www.elastic.co/thank-you?url=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.3/elasticsearch-2.3.3.tar.gz)
+<del>Download: [elasticsearch-2.3.3.tar.gz](https://www.elastic.co/thank-you?url=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.3/elasticsearch-2.3.3.tar.gz)</del>
+
+Download latest version from official website(5.2.2, on Mar 2017).
+(Report requires kernel 3.5+ with CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER compiled in... ?)
 
 > tar -zxvf elasticsearch-2.1.0.tar.gz
 
@@ -23,6 +26,16 @@ network.port=9200
 ```
 Or set network.host=0.0.0.0, allow connection by IP.
 
+Or use below to bind publish addresses: 
+```
+network.host: localhost
+http.host: 10.200.157.84
+```
+
+And for firewalld:
+```
+sudo firewall-cmd --zone=public --permanent --add-port=9200/tcp 
+```
 
 1. 其他的选项保持默认，然后启动ES：
 > ./bin/elasticsearch
@@ -64,6 +77,7 @@ Caused by:
 36554 Jps
 36540 Elasticsearch
 ```
+
 
 Or, run instead:
 > bin/elasticsearch -Des.insecure.allow.root=true
@@ -123,3 +137,34 @@ BODY 一个JSON格式的请求主体（如果请求需要的话）
 Run docker image:
 > docker pull kibana
 > $ docker run --name some-kibana -e ELASTICSEARCH_URL=http://some-elasticsearch:9200 -p 5601:5601 -d kibana
+
+Mind the version, for Kibana 5.x, ElasticSearch must be 5.x.
+
+### Logstash
+Version: 5.2.2 
+Data collection engine with real-time pipelining capabilities.
+
+Output logs to ElasticSearch:
+- Create a config file _logstash-filter.conf_ in base path.
+With content:
+```
+input { stdin { } }
+
+filter {
+  grok {
+    match => { "message" => "%{COMBINEDAPACHELOG}" }
+  }
+  date {
+    match => [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]
+  }
+}
+
+output {
+  elasticsearch { hosts => ["${YOUR_ES_HOST}:9200"] }
+  stdout { codec => rubydebug }
+}
+```
+- Run logstash with config file:
+```
+bin/logstash -f logstash-filter.conf
+```
