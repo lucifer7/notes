@@ -1,4 +1,4 @@
-### ElasticSearch Install
+### 1. ElasticSearch Install
 1. [Guidance Book](http://es.xiaoleilu.com/010_Intro/00_README.html)
 
 <del>Download: [elasticsearch-2.3.3.tar.gz](https://www.elastic.co/thank-you?url=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.3/elasticsearch-2.3.3.tar.gz)</del>
@@ -90,6 +90,10 @@ and get a json type string
 1. 查看集群状态
 Console：
 > http://10.200.157.50:9200/_plugin/head/
+
+1. List all indices
+> http://10.200.157.84:9200/_cat/indices?v
+
 Kibana Sense:
 > yum OR tar
 [root@localhost bin]# vim /opt/kibana/config/kibana.yml 
@@ -101,7 +105,7 @@ ELK, Elasticsearch + Logstash + Kibana
 搭建实时日志分析平台
 [参考地址](http://www.importnew.com/20464.html)
 
-### NOTES
+#### NOTES
 一个实时分布式搜索和分析引擎
 
 - 全文搜索
@@ -133,18 +137,18 @@ QUERY_STRING 一些可选的查询请求参数，例如?pretty参数将使请求
 BODY 一个JSON格式的请求主体（如果请求需要的话）
 ```
 
-### Kibana
+### 2. Kibana
 Run docker image:
 > docker pull kibana
 > $ docker run --name some-kibana -e ELASTICSEARCH_URL=http://some-elasticsearch:9200 -p 5601:5601 -d kibana
 
 Mind the version, for Kibana 5.x, ElasticSearch must be 5.x.
 
-### Logstash
+### 3. Logstash
 Version: 5.2.2 
 Data collection engine with real-time pipelining capabilities.
 
-Output logs to ElasticSearch:
+#### 3.1 Output logs to ElasticSearch:
 - Create a config file _logstash-filter.conf_ in base path.
 With content:
 ```
@@ -168,3 +172,21 @@ output {
 ```
 bin/logstash -f logstash-filter.conf
 ```
+
+#### 3.2 How Logstash works
+ 3 stages: input -> filter -> output
+ 
+ **Inputs**
+ Get data into Logstash. Like: file, syslog, redis, beats(FileBeats), log4j(socket appender).
+ 
+ **Filters**
+ Combine filters to perform actions on the event if meets certain criteria.
+ 
+ **Outputs**
+ An event can pass multiple outputs. e.g. elasticsearch, file.
+ 
+ **Codecs**
+ Stream filters operate as part of input or output. Can separate the transport of message from the serialization process.
+ e.g. json, multiline, plain(text).
+ 
+ 
