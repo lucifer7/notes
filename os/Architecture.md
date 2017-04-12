@@ -113,10 +113,14 @@ AMP vs. SMP
 
 Intel 用了很牛的技术  SMT （同步多线程），一个CPU同时可以执行两个线程，如双核CPU可以有4个逻辑处理器
 
-SMT v.s. Hyper Threading
-SMT: an architecture feature of some processors
-allows multiple thread to issue instructions on each cycle(same time ?)
-Hyper-Threading is a specific implementation of SMT
+ **SMT(Simultaneous Multi-threading)**   
+Def: Permits multiple independent threads to execute _simultaneously_ on the SAME core.   
+Weaving together multiple "threads" on the same core 
+
+SMT v.s. Hyper Threading   
+SMT: an architecture feature of some processors   
+allows multiple thread to issue instructions on each cycle(same time ?)   
+Hyper-Threading is a specific implementation of SMT.
 
 ### 4 Design of System
 #### 4.1 Building block
