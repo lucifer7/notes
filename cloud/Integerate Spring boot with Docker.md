@@ -1,4 +1,4 @@
-# Integrate Spring Boot with Docker
+## Integrate Spring Boot with Docker
 Find latest version in repository _spring-boot-docker_.
 
 ## Prepare
@@ -44,7 +44,7 @@ You can use Gradle or Maven to integerate with docker, in this case, we use Mave
 
 #### 2.1 pom.xml config
 
-```
+```xml
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>

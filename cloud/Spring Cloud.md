@@ -1,7 +1,6 @@
 # spring-cloud-demo
 ## Categories
-
-```
+```xml
 <module>eureka</module>             <!-- Eureka server -->
 <module>eureka-peer</module>        <!-- Eureka server peer -->
 <module>compute-supplier</module>   <!-- service provider -->
@@ -9,7 +8,6 @@
 <module>ribbon-eureka</module>      <!-- client side load balanced, with Hystrix as circuit breaker -->
 <module>feign-eureka</module>       <!-- Declarative REST client  -->
 ```
-
 
 ## Modules
 ### 1. Eureka server
@@ -20,7 +18,7 @@ Serves as server side, while rest serve as Eureka client.
 Eureka-server and its replica eureka-server-peer.
 
 Config both peers to register each other:
-```
+```yaml
   client:
     fetch-registry: true         # set true to register peers
     register-with-eureka: false   # do not register itself as a client in standalone mode

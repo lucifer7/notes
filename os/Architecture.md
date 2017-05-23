@@ -1,7 +1,3 @@
-[TOC]
-
-## Architecture
-
 ### 1. Scalable Computing/Analysis
 #### 1.1 Three architecture ?
 
@@ -71,11 +67,12 @@ Best practice: 2-4 CPUs
 - 系统性能无法线性增加
 
  MPP vs. NUMA
-| Criteria | MPP | NUMA |
-|--|:--|:--|
+ 
+| Criteria    | MPP | NUMA |
+|-------------|:----|:-----|
 | 节点互联机制 | I/O | inside same physical server |
 | 内存访问机制 | access only local | access to all, remote delays |
-| Usage | data warehouse, i/o | OLTP, little data, fast processing |
+| Usage       | data warehouse, i/o | OLTP, little data, fast processing |
 
 > [服务器三大体系SMP、NUMA、MPP介绍](http://server.51cto.com/sCollege-198840.htm)
 
@@ -95,11 +92,12 @@ Best practice: 2-4 CPUs
 - 一个操作系统的实例可以同时管理所有CPU内核，且应用并不绑定某一个内核
 
 AMP vs. SMP
+
 | Criteria | AMP | SMP |
-|---|:--|:--|
-| 耦合 | 松耦合多CPU系统 | 紧耦合多CPU系统 |
-| OS | one CPU, one OS | multi CPU, share one OS |
-| Apply | less | more |
+|----------|:----|:---|
+| 耦合     | 松耦合多CPU系统 | 紧耦合多CPU系统 |
+| OS       | one CPU, one OS | multi CPU, share one OS |
+| Apply    | less | more |
 
 3. Bound Multi-Processing (BMP)
 

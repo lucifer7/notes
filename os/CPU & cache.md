@@ -2,7 +2,7 @@
 软件性能诊断工具
 Use PMU, tracepoint and special counter in kernel
 
-#### Terms
+### Terms
 
 1. 硬件并行设计
 
@@ -11,7 +11,7 @@ CPU 流水线 | processor pipeline
 乱序执行 reordering ?
 Based：相邻指令不依赖
 
-2. 分支预测 branch predict ?
+2. 分支预测 branch predict
 
 预测最可能的下条指令
 对switch case效果不佳
@@ -25,7 +25,7 @@ performance monitor unit
 
 散落在内核中的hook, 可被 trace/debug 工具使用，如 perf
 
-#### Usages
+### Usages
 > perf list
 list all monitor event
 
