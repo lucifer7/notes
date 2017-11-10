@@ -105,9 +105,14 @@ AMP vs. SMP
 - 一个操作系统的实例可以同时管理所有CPU内核，但每个应用被锁定于某个指定的核心
 
 #### 3.3 补充
-> Seemingly, SMP(UMP), NUMP and MPP refers to CPU and RAM architecture
+> Seemingly, SMP(UMA), NUMA and MPP refers to CPU and RAM architecture
 
 > And SMP, AMP, BMP refers to CPU and OS architecture
+
+> More on 17-09-29:    
+SMP: multiprocessor computer hardware and software architecture    
+UMA: a shared memory architecture used in parallel computers    
+UMA may use bus-based SMP arch or crossbar switches
 
 Intel 用了很牛的技术  SMT （同步多线程），一个CPU同时可以执行两个线程，如双核CPU可以有4个逻辑处理器
 
