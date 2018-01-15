@@ -7,7 +7,7 @@ Update at: 2016-06-14
 Pending till new machine...
 1. Restore dev environment (IDEA, VM, CENTOS 6.5)
 ```
-1.1 192.168.1.16    jdk, tomcat, redis-a, rocketmq-a                Data Cache and MQ master Server
+1.1 192.168.1.16    jdk1.7, tomcat, redis-a, rocketmq-a                Data Cache and MQ master Server
 1.2 192.168.1.17    jdk, tomcat, redis-b, rocketmq-b                Data Cache and MQ slave Server
 1.3 192.168.1.18    jdk, tomcat, svn, nexus, jerkins                Contineous Integration Server
 1.4 192.168.1.19    jdk, tomcat, mysql                              Database Server
