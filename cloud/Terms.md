@@ -1,8 +1,8 @@
 ## terms
 
 ### 1.0 Computer Science
-1. spatial and temporal locality
-空间局部性
+1. spatial and temporal locality    
+空间局部性   
 时间局部性
 
 1. Fluent Interface
@@ -11,9 +11,10 @@
 流接口
 
 1. Application Spikability
-DEF: An Application's Ability to Handle Unknown and/or Inconsistent Load
-how an application can handle spiky behavior
-峰值处理能力？
+DEF: An Application's Ability to Handle Unknown and/or Inconsistent Load    
+how an application can handle spiky behavior    
+峰值处理能力？     
+Solutions see : https://www.iron.io/spikability-applications-ability-to/
 
 1. CPS（Cyber-Physical Systems）
 物联网(us)
@@ -38,8 +39,6 @@ limits, accounts for, and isolates the resource usage(CPU, memory, disk i/o, net
 
 ### 2.0 Internet Association
 1. 多跳网络（multi-hop），以及自组织网络（ad-hoc）
-
-Solutions see : https://www.iron.io/spikability-applications-ability-to/
 
 1. Definition of Modern Web Browser
 - successfully rendering a site
@@ -76,13 +75,20 @@ Cache stampedes / dogpile effect / dog-piling
 解决：
 返回旧值、加锁某个线程去拿新值、单开一个线程拿值
 
-1. Congestive collapse
+1. Congestive collapse  
+拥塞崩溃？
 congestion prevents or limits useful communication
 choke point: incoming traffic exceeds outgoing bandwidth
 
+1. Protocol Stack  
+Or network stack, is an implementation of a computer networking protocol suite(or protocol family).
+
+Suite is the definition of the Communication Protocols, stack is the software implementation.
+
+
 ### 3.0 SQL
-predicate 谓词
-OR 断言
+predicate  
+谓词 OR 断言  
 e.g. BETWEEN EXISTS IN
 
 spatial index

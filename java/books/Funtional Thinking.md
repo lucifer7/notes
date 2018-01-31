@@ -20,8 +20,8 @@ _for_ iteration
 
 - Functional    
 Expression and Transformation    
-Model mathmatical formula    
-Avoid mutal states    
+Model mathematical formula    
+Avoid mutable states    
 
 #### Common Building Blocks
 - filter
@@ -61,7 +61,7 @@ Another perspective on Linked List: head and tail
 
 Tail-call optimization: avoid stack growth
 
-### Chap 4
+### Chap 4 Smarter, Not Harder
 #### Memoization
 Method level inner cache    
 Only for pure function
@@ -71,12 +71,12 @@ Lazy evaluation
 Compute element when use   
 
 Pro:  
-Delay expensive caculation  
+Delay expensive calculation  
 Infinite collection  
 Help map, filter
 
-### Chap 5 Evolving Language
-Few data structs with massive operations
+### Chap 5 Evolve
+Few data structures, many operations
 
 Dispatch mechanism:  
 dynamically choose the behavior  
@@ -96,11 +96,11 @@ Exception handle:
 Either  
 Option
 
-### Chap 6 Pattern and Resusability
+### Chap 6 Advance(Pattern and Reusability)
 Architecture  
 Groovy @Immutable
 
-### Chap 7 Application
+### Chap 7 Practical Thinking
 CQRS  
 Command-Query Responsibility Segregation  
 Will use Eventual Consistency instead of transaction  
@@ -113,7 +113,10 @@ Record all schema and data updates
 Separate read and write  
 Immutable valud and timestamp in event-driven architect  
 
-### Chap 8 Multi paradigm
+### Chap 8 Polyglot and Polyparadigm (Multi paradigm)
 Meta programming  
 
 Functional Pyramid  
+[![Language Categories.jpg](https://i.loli.net/2018/01/31/5a71281ea4b09.jpg)](https://i.loli.net/2018/01/31/5a71281ea4b09.jpg)
+Concerning functional:  
+[![Language with paradigms overlay.jpg](https://i.loli.net/2018/01/31/5a71281eb0c23.jpg)](https://i.loli.net/2018/01/31/5a71281eb0c23.jpg)
